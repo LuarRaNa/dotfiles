@@ -1,0 +1,25 @@
+{{- if (not .ephemeral) }}
+{{-   $fontDir := "" }}
+{{-   $baseURL := "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/" }}
+{{-   if eq .chezmoi.os "darwin" }}
+{{-     $fontDir = "Library/Fonts" }}
+{{-   else if eq .chezmoi.os "linux" }}
+{{-     $fontDir = ".local/share/fonts" }}
+{{-   end }}
+["{{ $fontDir }}/JetBrains Mono Regular Nerd Font Complete Mono.ttf"]
+    type = "file"
+    url = "{{ $baseURL }}Ligatures/Regular/complete/JetBrains Mono Regular Nerd Font Complete Mono.ttf"
+    refreshPeriod = "168h"
+["{{ $fontDir }}/JetBrains Mono Bold Nerd Font Complete Mono.ttf"]
+    type = "file"
+    url = "{{ $baseURL }}Ligatures/Bold/complete/JetBrains Mono Bold Nerd Font Complete Mono.ttf"
+    refreshPeriod = "168h"
+["{{ $fontDir }}/JetBrains Mono Italic Nerd Font Complete Mono.ttf"]
+    type = "file"
+    url = "{{ $baseURL }}Ligatures/Italic/complete/JetBrains Mono Italic Nerd Font Complete Mono.ttf"
+    refreshPeriod = "168h"
+["{{ $fontDir }}/JetBrains Mono Bold Italic Nerd Font Complete Mono.ttf"]
+    type = "file"
+    url = "{{ $baseURL }}Ligatures/BoldItalic/complete/JetBrains Mono Bold Italic Nerd Font Complete Mono.ttf"
+    refreshPeriod = "168h"
+{{- end }}
