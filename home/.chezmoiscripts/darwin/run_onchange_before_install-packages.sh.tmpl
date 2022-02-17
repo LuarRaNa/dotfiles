@@ -1,0 +1,25 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/bin/bash
+
+set -eufo pipefail
+
+{{ $brews := list
+     "fd"
+     "neovim"
+     "node"
+     "ripgrep"
+     "starship"
+     "tmux" -}}
+
+{{ if .personal -}}
+{{   $brews = concat $brews (list
+       "elixir"
+       "exercism") -}}
+{{ end -}}
+
+brew bundle --no-lock --file=/dev/stdin <<EOF
+{{ range ($brews | sortAlpha | uniq) -}}
+brew "{{ . }}"
+{{ end -}}
+EOF
+{{ end -}}
