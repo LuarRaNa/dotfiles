@@ -1,0 +1,10 @@
+add_newline = false
+
+[username]
+show_always = true
+
+[package]
+disabled = true
+
+[battery]
+disabled = true
