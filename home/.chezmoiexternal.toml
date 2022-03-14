@@ -23,3 +23,15 @@
     url = "{{ $baseURL }}Ligatures/BoldItalic/complete/JetBrains Mono Bold Italic Nerd Font Complete Mono.ttf"
     refreshPeriod = "168h"
 {{- end }}
+{{- if (.personal) }}
+{{-   $version := "3.0.13" }}
+{{-   $baseURL := "https://github.com/exercism/cli/releases/download/v" }}
+[".local/bin/exercism"]
+    type = "file"
+    url = "{{ $baseURL }}{{ $version }}/exercism-{{ $version }}-{{ .chezmoi.os }}-x86_64.tar.gz"
+    executable = true
+    refreshPeriod = "168h"
+    [".local/bin/exercism".filter]
+        command = "tar"
+        args = ["--extract", "--file", "/dev/stdin", "--gzip", "--to-stdout", "exercism"]
+{{- end }}
