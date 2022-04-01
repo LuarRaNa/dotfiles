@@ -11,6 +11,9 @@ set -eufo pipefail
      "starship"
      "tmux" -}}
 
+{{ $casks := list
+     "alacritty" -}}
+
 {{ if .personal -}}
 {{   $brews = concat $brews (list
        "elixir"
@@ -20,6 +23,9 @@ set -eufo pipefail
 brew bundle --no-lock --file=/dev/stdin <<EOF
 {{ range ($brews | sortAlpha | uniq) -}}
 brew "{{ . }}"
+{{ end -}}
+{{ range ($casks | sortAlpha | uniq) -}}
+cask "{{ . }}"
 {{ end -}}
 EOF
 {{ end -}}
