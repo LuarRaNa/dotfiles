@@ -10,8 +10,8 @@ shell:
 
 window:
   dimensions:
-    columns: 140
-    lines: 40
+    columns: 200
+    lines: 55
 
 font:
   normal:
@@ -26,7 +26,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font Mono
     style: Bold Italic
-  size: 16
+  size: 13
 
 key_bindings:
   # shortcuts for tmux. the leader key is control-b (0x02)
