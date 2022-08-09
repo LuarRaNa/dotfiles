@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
+  default_prog = { '/opt/homebrew/bin/nu', '-l' },
   -- Cursor
   default_cursor_style = "BlinkingBlock",
   force_reverse_video_cursor = true,
@@ -13,15 +14,15 @@ return {
   line_height = 1.0,
   -- Shorcuts
   keys = {
-    {key="f", mods="CTRL|CMD", action="ToggleFullScreen"},
+    {key="f", mods="CTRL|CMD", action=wezterm.action.ToggleFullScreen},
   },
   -- Window size and decorations
-  color_scheme = "Gruvbox Dark",
+  color_scheme = "Dark+",
   initial_cols = 200,
   initial_rows = 50,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
-  window_decorations = "NONE",
+  native_macos_fullscreen_mode = true,
   window_padding = {
     left = 0,
     right = 0,
