@@ -6,10 +6,10 @@ def create_left_prompt [] {
     let path_segment = if ($is_home_in_path) {
         [
             (char space)
-            ($env.PWD | str replace $nu.home-path '')
+            ($env.PWD | str replace $nu.home-path '')
             (char space)
         ] | str collect
-     } else {
+    } else {
         [
             (char space)
             ($env.PWD)
@@ -18,46 +18,109 @@ def create_left_prompt [] {
     }
 
     let shell = if (is-admin) {
-        [
-            (ansi { fg: "#1E1E1E" bg: "#F14C4C" attr: b })
-            (char space)
-            (ansi { fg: "#1E1E1E" bg: "#F14C4C" attr: b })
-            ($">_ in")
-            (char space)
-            (ansi { fg: "#F14C4C" bg: "#1E1E1E" attr: b })
-            (char -u e0b0)
-        ] | str collect
+        "ROOT"
     } else {
-        [
-            (ansi { fg: "#1E1E1E" bg: "#3B8EEA" attr: b })
-            (char space)
-            (ansi { fg: "#1E1E1E" bg: "#3B8EEA" attr: b })
-            ($">_ in")
-            (char space)
-            (ansi { fg: "#3B8EEA" bg: "#1E1E1E" attr: b })
-            (char -u e0b0)
-        ] | str collect
+        "USER"
+    }
+
+    let status = if ($env.LAST_EXIT_CODE != 0) {
+        (char -u "F00D")
+    } else {
+        (char -u "F00C")
     }
 
     let prompt = ([
+        # SHELL
+        (ansi reset)
+        (ansi lg)
+        (char -u "E0B6")
+        (ansi lgr)
+        (ansi lgb)
+        (char space)
+        (char -u "F007")
+        (char space)
         ($shell)
-        (ansi { fg: '#1E1E1E' bg: '#666666' attr: b })
-        (char -u e0b0)
+        (char space)
+        (ansi reset)
+        (ansi lg)
+        (char -u "E0B4")
+        # PATH
+        (char space)
+        (ansi lp)
+        (char -u "E0B6")
+        (ansi lpr)
+        (ansi lpb)
         ($path_segment)
-        (ansi { fg: '#666666' bg: '#1E1E1E' attr: b })
-        (char -u e0b0)
+        (ansi reset)
+        (ansi lp)
+        (char -u "E0B4")
+        # NEW_LINE
+        (ansi reset)
+        (ansi lg)
+        (char enter)
+        (char space)
+        (char space)
+        (char -u "F061")
         (ansi reset)
     ] | str collect)
 
     $prompt
 }
 
+def pad_to_2_digits [number] {
+    $number | into string | str lpad -l 2 -c '0'
+}
+
+def convert_ms_to_time [] {
+    let ms = ($env.CMD_DURATION_MS | into int)
+    let seconds = (($ms / 1000) | math floor)
+    let minutes = (($seconds / 60) | math floor)
+    let hours = (($minutes / 60) | math floor)
+
+    let $ms = ($ms mod 1000)
+    let $seconds = ($seconds mod 60)
+    let $minutes = ($minutes mod 60)
+
+    let hh_mm_ss = ([
+        (pad_to_2_digits $hours)
+        (":")
+        (pad_to_2_digits $minutes)
+        (":")
+        (pad_to_2_digits $seconds)
+        (":")
+        (pad_to_2_digits $ms)
+    ] | str collect)
+
+    $hh_mm_ss
+}
+
 def create_right_prompt [] {
     let time_segment = ([
-        (ansi { fg: "#D670D6" bg: "#1E1E1E" attr: b })
-        (char -u e0b2)
-        (ansi { fg: "#1E1E1E" bg: "#D670D6" attr: b })
+        (ansi reset)
+        (ansi lu)
+        (char -u "E0B6")
+        (ansi lur)
+        (ansi lub)
+        (char space)
+        (char -u "FC8A")
+        (char space)
+        (convert_ms_to_time)
+        (char space)
+        (ansi reset)
+        (ansi lu)
+        (char -u "E0B4")
+        (char space)
+        (ansi lc)
+        (char -u "E0B6")
+        (ansi lcr)
+        (ansi lcb)
+        (char space)
         (date now | date format '%m/%d/%Y %r')
+        (char space)
+        (ansi reset)
+        (ansi lc)
+        (char -u "E0B4")
+        (ansi reset)
     ] | str collect)
 
     $time_segment
@@ -120,4 +183,6 @@ let-env PATH = ($env.PATH | prepend $env.HOMEBREW_SBIN)
 let-env LOCAL_BIN = ([$env.HOME, '/.local/bin'] | str collect)
 
 let-env PATH = ($env.PATH | prepend $env.LOCAL_BIN)
+
+let-env PATH = ($env.PATH | prepend '/usr/local/bin')
 
