@@ -12,12 +12,13 @@ return {
   }),
   font_size = 13,
   line_height = 1.0,
+  freetype_load_target = 'Light',
   -- Shorcuts
   keys = {
     {key="f", mods="CTRL|CMD", action=wezterm.action.ToggleFullScreen},
   },
   -- Window size and decorations
-  color_scheme = "Dark+",
+  color_scheme = "tokyonight-storm",
   initial_cols = 200,
   initial_rows = 50,
   use_fancy_tab_bar = false,
