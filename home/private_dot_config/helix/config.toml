@@ -1,10 +1,11 @@
-theme = "dark_plus"
+theme = "tokyonight_storm"
 
 [editor]
 rulers = [80, 120]
 
 [editor.file-picker]
 hidden = false
+parents = false
 
 [editor.indent-guides]
 render = true
@@ -12,6 +13,12 @@ character = "╎"
 
 [editor.lsp]
 display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
 
 [editor.whitespace]
 render = "all"
