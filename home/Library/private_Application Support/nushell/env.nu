@@ -142,15 +142,15 @@ let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
 let-env ENV_CONVERSIONS = {
-  "PATH": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | path expand | str collect (char esep) }
-  }
-  "Path": {
-    from_string: { |s| $s | split row (char esep) }
-    to_string: { |v| $v | path expand | str collect (char esep) }
-  }
-}
+   "PATH": {
+     from_string: { |s| $s | split row (char esep) | path expand -n }
+     to_string: { |v| $v | path expand -n | str collect (char esep) }
+   }
+   "Path": {
+     from_string: { |s| $s | split row (char esep) | path expand -n }
+     to_string: { |v| $v | path expand -n | str collect (char esep) }
+   }
+ }
 
 # Directories to search for scripts when calling source or use
 #
@@ -176,13 +176,15 @@ let-env INFOPATH = '/opt/homebrew/share/info:'
 let-env MANPATH = '/opt/homebrew/share/man::'
 let-env HOMEBREW_BIN = '/opt/homebrew/bin'
 let-env HOMEBREW_SBIN = '/opt/homebrew/sbin'
-
-let-env PATH = ($env.PATH | prepend $env.HOMEBREW_BIN)
-let-env PATH = ($env.PATH | prepend $env.HOMEBREW_SBIN)
+let-env EDITOR = ([$env.HOMEBREW_BIN, '/hx'] | str collect)
+let-env LIBGL_ALWAYS_SOFTWARE = 'true'
 
 let-env LOCAL_BIN = ([$env.HOME, '/.local/bin'] | str collect)
 
-let-env PATH = ($env.PATH | prepend $env.LOCAL_BIN)
+let-env PATH = ($env.PATH | split row (char esep) | prepend $env.LOCAL_BIN)
 
-let-env PATH = ($env.PATH | prepend '/usr/local/bin')
+let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
+
+let-env PATH = ($env.PATH | split row (char esep) | prepend $env.HOMEBREW_BIN)
+let-env PATH = ($env.PATH | split row (char esep) | prepend $env.HOMEBREW_SBIN)
 
