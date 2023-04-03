@@ -1,40 +1,62 @@
 env:
-  TERM: xterm-256color
+  TERM: alacritty
 
 shell:
-  program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
-
-window:
-  dimensions:
-    columns: 200
-    lines: 55
+  program: /opt/homebrew/bin/nu
 
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: IosevkaTerm Nerd Font
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: IosevkaTerm Nerd Font
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font Mono
-    style: Italic
+    family: IosevkaTerm Nerd Font
+    style: Oblique
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
-    style: Bold Italic
-  size: 13
+    family: IosevkaTerm Nerd Font
+    style: Bold Oblique
+  size: 18
 
-key_bindings:
-  # shortcuts for tmux. the leader key is control-b (0x02)
-  - { key: W, mods: Command,       chars: "\x02&" }  # close tab (kill)
-  - { key: T, mods: Command,       chars: "\x02c" }  # new tab
-  - { key: J, mods: Command,       chars: "\x02n" }  # select next tab
-  - { key: K, mods: Command,       chars: "\x02p" }  # select previous tab
-  - { key: J, mods: Command|Shift, chars: "\x02o" }  # select next pane
-  - { key: K, mods: Command|Shift, chars: "\x02;" }  # select last (previously used) pane
-  - { key: F, mods: Command,       chars: "\x02/" }  # search (upwards) (see tmux.conf)
-
+colors:
+  primary:
+    background: "0xfaf4ed"
+    foreground: "0x575279"
+  cursor:
+    text: "0x575279"
+    cursor: "0xcecacd"
+  vi_mode_cursor:
+    text: "0x575279"
+    cursor: "0xcecacd"
+  line_indicator:
+    foreground: None
+    background: None
+  selection:
+    text: "0x575279"
+    background: "0xdfdad9"
+  normal:
+    black: "0xf2e9e1"
+    red: "0xb4637a"
+    green: "0x286983"
+    yellow: "0xea9d34"
+    blue: "0x56949f"
+    magenta: "0x907aa9"
+    cyan: "0xd7827e"
+    white: "0x575279"
+  bright:
+    black: "0x9893a5"
+    red: "0xb4637a"
+    green: "0x286983"
+    yellow: "0xea9d34"
+    blue: "0x56949f"
+    magenta: "0x907aa9"
+    cyan: "0xd7827e"
+    white: "0x575279"
+  hints:
+    start:
+      foreground: "#797593"
+      background: "#fffaf3"
+    end:
+      foreground: "#9893a5"
+      background: "#fffaf3"
