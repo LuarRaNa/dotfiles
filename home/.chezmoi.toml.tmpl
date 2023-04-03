@@ -1,6 +1,7 @@
 {{/* boolean feature tags */}}
 {{- $ephemeral := false -}}{{/* true if this machine is ephemeral, e.g. a cloud or VM instance */}}
 {{- $personal := false -}}{{/* true if this machine is for personal use*/}}
+{{- $shell := "zsh" -}}{{/* zsh by default*/}}
 {{- "" -}}
 
 {{/* detect GitHub codespaces, VSCode remote containers, Docker containers, Multipass VMs, and Vagrant boxes */}}
@@ -15,6 +16,7 @@
 {{-   if eq $computerName "luar-mm" -}}
 {{-     $hostname = "luar-mm" -}}
 {{-     $personal = true -}}
+{{-     $shell = "nu" -}}
 {{-   else -}}
 {{-     $hostname = $computerName -}}
 {{-   end -}}
@@ -24,3 +26,5 @@
     ephemeral = {{ $ephemeral }}
     hostname = {{ $hostname | quote }}
     personal = {{ $personal }}
+[cd]
+    command = {{ $shell | quote }}

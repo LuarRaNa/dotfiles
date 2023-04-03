@@ -4,17 +4,15 @@
 set -eufo pipefail
 
 {{ $brews := list
+     "chezmoi"
      "fd"
      "gitui"
-     "neovim"
-     "node"
+     "lazygit"
      "nushell"
-     "ripgrep"
-     "starship"
-     "viu" -}}
+     "ripgrep" -}}
 
 {{ $casks := list
-     "gitup"
+	 "alacritty"
      "wezterm" -}}
 
 {{ if .personal -}}
@@ -22,9 +20,6 @@ set -eufo pipefail
        "elixir"
        "exercism"
        "podman") -}}
-{{   $casks = concat $casks (list
-       "docker"
-       "spotify") -}}
 {{ end -}}
 
 brew bundle --no-lock --file=/dev/stdin <<EOF
