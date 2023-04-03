@@ -1,7 +1,9 @@
-theme = "tokyonight_storm"
+theme = "rose_pine_dawn"
 
 [editor]
 rulers = [80, 120]
+auto-save = true
+bufferline = "always"
 
 [editor.file-picker]
 hidden = false
@@ -15,10 +17,36 @@ character = "╎"
 display-messages = true
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = [
+  "mode",
+  "version-control",
+  "spinner",
+  "diagnostics",
+  "workspace-diagnostics"
+]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right = [
+  "selections",
+  "primary-selection-length",
+  "position",
+  "position-percentage",
+  "total-line-numbers",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
 separator = "│"
 
 [editor.whitespace]
 render = "all"
+
+[editor.whitespace.characters]
+space = "␣"
+nbsp = "␣"
+tab = "␉"
+newline = "␤"
+tabpad = "␣" # Tabs will look like "␉···" (depending on tab width)
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = "␊"
