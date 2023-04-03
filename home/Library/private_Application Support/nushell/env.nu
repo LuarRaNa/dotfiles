@@ -6,15 +6,19 @@ def create_left_prompt [] {
     let path_segment = if ($is_home_in_path) {
         [
             (char space)
-            ($env.PWD | str replace $nu.home-path '')
             (char space)
-        ] | str collect
+            ($env.PWD | str replace $nu.home-path (char -u "EB06"))
+            (char space)
+            (char space)
+        ] | str join
     } else {
         [
             (char space)
+            (char space)
             ($env.PWD)
             (char space)
-        ] | str collect
+            (char space)
+        ] | str join
     }
 
     let shell = if (is-admin) {
@@ -32,43 +36,33 @@ def create_left_prompt [] {
     let prompt = ([
         # SHELL
         (ansi reset)
-        (ansi lg)
-        (char -u "E0B6")
-        (ansi lgr)
-        (ansi lgb)
+        (ansi cr)
         (char space)
-        (char -u "F007")
+        (char space)
+        (char -u "F2C0")
+        (char space)
         (char space)
         ($shell)
         (char space)
-        (ansi reset)
-        (ansi lg)
-        (char -u "E0B4")
-        # PATH
         (char space)
-        (ansi lp)
-        (char -u "E0B6")
-        (ansi lpr)
-        (ansi lpb)
-        ($path_segment)
+        # PATH
         (ansi reset)
-        (ansi lp)
-        (char -u "E0B4")
+        (ansi wr)
+        ($path_segment)
         # NEW_LINE
         (ansi reset)
-        (ansi lg)
         (char enter)
         (char space)
         (char space)
         (char -u "F061")
         (ansi reset)
-    ] | str collect)
+    ] | str join)
 
     $prompt
 }
 
 def pad_to_2_digits [number] {
-    $number | into string | str lpad -l 2 -c '0'
+    $number | into string | fill -a l -c '0' -w 2
 }
 
 def convert_ms_to_time [] {
@@ -89,7 +83,7 @@ def convert_ms_to_time [] {
         (pad_to_2_digits $seconds)
         (":")
         (pad_to_2_digits $ms)
-    ] | str collect)
+    ] | str join)
 
     $hh_mm_ss
 }
@@ -97,31 +91,16 @@ def convert_ms_to_time [] {
 def create_right_prompt [] {
     let time_segment = ([
         (ansi reset)
-        (ansi lu)
-        (char -u "E0B6")
-        (ansi lur)
-        (ansi lub)
+        (ansi ur)
         (char space)
-        (char -u "FC8A")
+        (char space)
+        (char -u "F0150")
+        (char space)
         (char space)
         (convert_ms_to_time)
         (char space)
-        (ansi reset)
-        (ansi lu)
-        (char -u "E0B4")
         (char space)
-        (ansi lc)
-        (char -u "E0B6")
-        (ansi lcr)
-        (ansi lcb)
-        (char space)
-        (date now | date format '%m/%d/%Y %r')
-        (char space)
-        (ansi reset)
-        (ansi lc)
-        (char -u "E0B4")
-        (ansi reset)
-    ] | str collect)
+    ] | str join)
 
     $time_segment
 }
@@ -142,15 +121,15 @@ let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
 # - converted from a value back to a string when running external commands (to_string)
 # Note: The conversions happen *after* config.nu is loaded
 let-env ENV_CONVERSIONS = {
-   "PATH": {
-     from_string: { |s| $s | split row (char esep) | path expand -n }
-     to_string: { |v| $v | path expand -n | str collect (char esep) }
-   }
-   "Path": {
-     from_string: { |s| $s | split row (char esep) | path expand -n }
-     to_string: { |v| $v | path expand -n | str collect (char esep) }
-   }
- }
+  "PATH": {
+    from_string: { |s| $s | split row (char esep) | path expand -n }
+    to_string: { |v| $v | path expand -n | str join (char esep) }
+  }
+  "Path": {
+    from_string: { |s| $s | split row (char esep) | path expand -n }
+    to_string: { |v| $v | path expand -n | str join (char esep) }
+  }
+}
 
 # Directories to search for scripts when calling source or use
 #
@@ -176,10 +155,10 @@ let-env INFOPATH = '/opt/homebrew/share/info:'
 let-env MANPATH = '/opt/homebrew/share/man::'
 let-env HOMEBREW_BIN = '/opt/homebrew/bin'
 let-env HOMEBREW_SBIN = '/opt/homebrew/sbin'
-let-env EDITOR = ([$env.HOMEBREW_BIN, '/hx'] | str collect)
+let-env EDITOR = ([$env.HOMEBREW_BIN, '/hx'] | str join)
 let-env LIBGL_ALWAYS_SOFTWARE = 'true'
 
-let-env LOCAL_BIN = ([$env.HOME, '/.local/bin'] | str collect)
+let-env LOCAL_BIN = ([$env.HOME, '/.local/bin'] | str join)
 
 let-env PATH = ($env.PATH | split row (char esep) | prepend $env.LOCAL_BIN)
 
