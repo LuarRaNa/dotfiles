@@ -9,9 +9,10 @@ return {
   font = wezterm.font_with_fallback {
     {
       family = "IosevkaTerm Nerd Font",
+      harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     }
   },
-  font_size = 16,
+  font_size = 14,
   -- Shorcuts
   keys = {
     {
@@ -21,8 +22,8 @@ return {
     },
   },
   -- Window
-  initial_cols = 150,
-  initial_rows = 50,
+  initial_cols = 120,
+  initial_rows = 40,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   native_macos_fullscreen_mode = true,
