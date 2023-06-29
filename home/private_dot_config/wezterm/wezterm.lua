@@ -1,6 +1,7 @@
 local wezterm = require 'wezterm';
 
 return {
+  front_end = "WebGpu",
   default_prog = {
     '/opt/homebrew/bin/nu',
     '-l'
@@ -8,7 +9,7 @@ return {
   -- Font Conf
   font = wezterm.font_with_fallback {
     {
-      family = "IosevkaTerm Nerd Font",
+      family = "IosevkaTerm Nerd Font Mono",
       harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     }
   },

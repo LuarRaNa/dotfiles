@@ -13,8 +13,8 @@
 {{- $hostname := .chezmoi.hostname -}}
 {{- if eq .chezmoi.os "darwin" -}}
 {{-   $computerName := output "scutil" "--get" "ComputerName" | trim -}}
-{{-   if eq $computerName "luar-mm" -}}
-{{-     $hostname = "luar-mm" -}}
+{{-   if eq $computerName "Luar’s MacBook Pro" -}}
+{{-     $hostname = "Luar’s MacBook Pro" -}}
 {{-     $personal = true -}}
 {{-     $shell = "nu" -}}
 {{-   else if eq $computerName "Luar’s MacBook Air" -}}
