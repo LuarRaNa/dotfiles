@@ -9,11 +9,11 @@ return {
   -- Font Conf
   font = wezterm.font_with_fallback {
     {
-      family = "IosevkaTerm Nerd Font Mono",
+      family = "JetBrainsMono Nerd Font Mono",
       harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     }
   },
-  font_size = 14,
+  font_size = 13,
   -- Shorcuts
   keys = {
     {
@@ -24,7 +24,7 @@ return {
   },
   -- Window
   initial_cols = 120,
-  initial_rows = 40,
+  initial_rows = 50,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   native_macos_fullscreen_mode = true,

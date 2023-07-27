@@ -1,25 +1,25 @@
 {{- if (not .ephemeral) }}
 {{-   $fontDir := "" }}
-{{-   $baseURL := "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/IosevkaTerm/" }}
+{{-   $baseURL := "https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/JetBrainsMono/Ligatures/" }}
 {{-   if eq .chezmoi.os "darwin" }}
 {{-     $fontDir = "Library/Fonts" }}
 {{-   else if eq .chezmoi.os "linux" }}
 {{-     $fontDir = ".local/share/fonts" }}
 {{-   end }}
-["{{ $fontDir }}/JetBrains Mono Regular Nerd Font Complete Mono.ttf"]
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-Regular.ttf"]
     type = "file"
-    url = "{{ $baseURL }}Regular/IosevkaTermNerdFontMono-Regular.ttf"
+    url = "{{ $baseURL }}Regular/JetBrainsMonoNerdFontMono-Regular.ttf"
     refreshPeriod = "168h"
-["{{ $fontDir }}/JetBrains Mono Bold Nerd Font Complete Mono.ttf"]
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-Bold.ttf"]
     type = "file"
-    url = "{{ $baseURL }}Bold/IosevkaTermNerdFontMono-Bold.ttf"
+    url = "{{ $baseURL }}Bold/JetBrainsMonoNerdFontMono-Bold.ttf"
     refreshPeriod = "168h"
-["{{ $fontDir }}/JetBrains Mono Italic Nerd Font Complete Mono.ttf"]
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-Italic.ttf"]
     type = "file"
-    url = "{{ $baseURL }}Oblique/IosevkaTermNerdFontMono-Oblique.ttf"
+    url = "{{ $baseURL }}Italic/JetBrainsMonoNerdFontMono-Italic.ttf"
     refreshPeriod = "168h"
-["{{ $fontDir }}/JetBrains Mono Bold Italic Nerd Font Complete Mono.ttf"]
+["{{ $fontDir }}/JetBrainsMonoNerdFontMono-BoldItalic.ttf"]
     type = "file"
-    url = "{{ $baseURL }}Bold-Oblique/IosevkaTermNerdFontMono-BoldOblique.ttf"
+    url = "{{ $baseURL }}BoldItalic/JetBrainsMonoNerdFontMono-BoldItalic.ttf"
     refreshPeriod = "168h"
 {{- end }}
