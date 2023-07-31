@@ -2,10 +2,6 @@ local wezterm = require 'wezterm';
 
 return {
   front_end = "WebGpu",
-  default_prog = {
-    '/opt/homebrew/bin/nu',
-    '-l'
-  },
   -- Font Conf
   font = wezterm.font_with_fallback {
     {

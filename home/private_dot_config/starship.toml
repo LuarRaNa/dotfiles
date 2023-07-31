@@ -1,10 +1,49 @@
 add_newline = false
 
+continuation_prompt = ""
+
+format = """
+$username\
+$directory\
+$git_branch\
+$docker_context\
+$character\
+"""
+
 [username]
 show_always = true
+format = '[    $user  in  ](bold inverted cyan)'
+
+[directory]
+home_symbol = ""
+format = '[  $path  ](bold inverted white)'
+
+[directory.substitutions]
+"/Documents" = ""
+"/Downloads" = ""
+"/Music" = "󰲸"
+"/Movies" = "󰯜"
+"/Pictures" = ""
+"/Projects" = "󰗀"
+"/" = "  "
+
+[git_branch]
+style = 'bold inverted blue'
+symbol = ' '
+format = '[  on $symbol$branch(:$remote_branch)  ]($style)'
+
+[docker_context]
+symbol = ' '
+style = '(bold inverted purple)'
+
+[character]
+success_symbol = ""
+error_symbol = ""
+format = "[$symbol\n](hidden)"
 
 [package]
 disabled = true
 
 [battery]
 disabled = true
+

@@ -1,18 +1,15 @@
-shell:
-  program: /opt/homebrew/bin/nu
-
 font:
   normal:
-    family: IosevkaTerm Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Regular
   bold:
-    family: IosevkaTerm Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold
   italic:
-    family: IosevkaTerm Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Oblique
   bold_italic:
-    family: IosevkaTerm Nerd Font Mono
+    family: JetBrainsMono Nerd Font Mono
     style: Bold Oblique
   size: 14
 
