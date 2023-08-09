@@ -12,11 +12,11 @@ $character\
 
 [username]
 show_always = true
-format = '[    $user  in  ](bold inverted cyan)'
+format = '[  $user in ](bold inverted cyan)'
 
 [directory]
 home_symbol = ""
-format = '[  $path  ](bold inverted white)'
+format = '[ $path ](bold inverted white)'
 
 [directory.substitutions]
 "/Documents" = ""
@@ -24,17 +24,19 @@ format = '[  $path  ](bold inverted white)'
 "/Music" = "󰲸"
 "/Movies" = "󰯜"
 "/Pictures" = ""
-"/Projects" = "󰗀"
+"/Public" = ""
+"/Sources" = "󰗀"
 "/" = "  "
 
 [git_branch]
 style = 'bold inverted blue'
 symbol = ' '
-format = '[  on $symbol$branch(:$remote_branch)  ]($style)'
+format = '[ on $symbol$branch(:$remote_branch) ]($style)'
 
 [docker_context]
 symbol = ' '
-style = '(bold inverted purple)'
+style = 'bold inverted purple'
+format = '[ via $symbol$context ]($style)'
 
 [character]
 success_symbol = ""
