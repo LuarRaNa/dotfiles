@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font Mono
     style: Bold Oblique
-  size: 14
+  size: 13
 
 colors:
   primary:
@@ -58,7 +58,7 @@ colors:
 window:
   dimensions:
     columns: 120
-    lines: 40
+    lines: 50
   position:
-    x: 440
-    y: 150
+    x: 612
+    y: 107
