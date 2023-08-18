@@ -3,13 +3,14 @@ local wezterm = require 'wezterm';
 return {
   front_end = "WebGpu",
   -- Font Conf
+  freetype_render_target = "HorizontalLcd",
   font = wezterm.font_with_fallback {
     {
       family = "JetBrainsMono Nerd Font Mono",
       harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
     }
   },
-  font_size = 13,
+  font_size = 14,
   -- Shorcuts
   keys = {
     {
@@ -19,10 +20,12 @@ return {
     },
   },
   -- Window
+  cell_width = 0.9,
   initial_cols = 120,
   initial_rows = 50,
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
+  hide_tab_bar_if_only_one_tab = true,
   native_macos_fullscreen_mode = true,
   window_close_confirmation = 'NeverPrompt',
   window_padding = {
