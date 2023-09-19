@@ -1,0 +1,4 @@
+{{- if (eq .chezmoi.os "darwin") -}}
+#!/opt/homebrew/bin/nu
+starship init nu | save -f ~/.cache/starship/init.nu
+{{ end -}}

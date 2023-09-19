@@ -1,5 +1,4 @@
 # Nushell Environment Config File
-
 def create_left_prompt [] {
     let is_home_in_path = ($env.PWD | str starts-with $nu.home-path)
 
@@ -159,11 +158,8 @@ $env.EDITOR = ([$env.HOMEBREW_BIN, '/hx'] | str join)
 $env.LIBGL_ALWAYS_SOFTWARE = 'true'
 
 $env.LOCAL_BIN = ([$env.HOME, '/.local/bin'] | str join)
-
 $env.PATH = ($env.PATH | split row (char esep) | prepend $env.LOCAL_BIN)
-
 $env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
-
 $env.PATH = ($env.PATH | split row (char esep) | prepend $env.HOMEBREW_BIN)
 $env.PATH = ($env.PATH | split row (char esep) | prepend $env.HOMEBREW_SBIN)
 

@@ -1,3 +1,6 @@
+shell:
+  program: /opt/homebrew/bin/nu
+
 font:
   normal:
     family: JetBrainsMono Nerd Font Mono
@@ -11,7 +14,7 @@ font:
   bold_italic:
     family: JetBrainsMono Nerd Font Mono
     style: Bold Oblique
-  size: 13
+  size: 14
 
 colors:
   primary:

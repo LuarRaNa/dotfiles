@@ -2,6 +2,10 @@ local wezterm = require 'wezterm';
 
 return {
   front_end = "WebGpu",
+  default_prog = {
+    '/opt/homebrew/bin/nu',
+    '-l'
+  },
   -- Font Conf
   freetype_render_target = "HorizontalLcd",
   font = wezterm.font_with_fallback {
@@ -26,6 +30,7 @@ return {
   use_fancy_tab_bar = false,
   tab_bar_at_bottom = true,
   hide_tab_bar_if_only_one_tab = true,
+  enable_tab_bar = false,
   native_macos_fullscreen_mode = true,
   window_close_confirmation = 'NeverPrompt',
   window_padding = {
