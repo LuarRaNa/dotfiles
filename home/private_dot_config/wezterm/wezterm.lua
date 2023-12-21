@@ -1,95 +1,127 @@
-local wezterm = require 'wezterm';
+-- Theme Configuration
+-- Rose Pine Dawn, from official website
+
+local palette = {
+    base = "#faf4ed",
+    surface = "#fffaf3",
+    overlay = "#f2e9e1",
+    muted = "#9893a5",
+    subtle = "#797593",
+    text = "#575279",
+    love = "#b4637a",
+    gold = "#ea9d34",
+    rose = "#d7827e",
+    pine = "#286983",
+    foam = "#56949f",
+    iris = "#907aa9",
+    highlight_low = "#f4ede8",
+    highlight_med = "#dfdad9",
+    highlight_high = "#cecacd",
+}
+
+local active_tab = {
+    bg_color = palette.overlay,
+    fg_color = palette.text,
+}
+
+local inactive_tab = {
+    bg_color = palette.base,
+    fg_color = palette.muted,
+}
+
+function colors()
+    return {
+        foreground = palette.text,
+        background = palette.base,
+        cursor_bg = palette.muted,
+        cursor_border = palette.muted,
+        cursor_fg = palette.text,
+        selection_bg = palette.overlay,
+        selection_fg = palette.text,
+        ansi = {
+            palette.surface,
+            palette.love,
+            palette.pine,
+            palette.gold,
+            palette.foam,
+            palette.iris,
+            palette.rose,
+            palette.text
+        },
+        brights = {
+            palette.subtle,
+            palette.love,
+            palette.pine,
+            palette.gold,
+            palette.foam,
+            palette.iris,
+            palette.rose,
+            palette.text
+        },
+        tab_bar = {
+            background = palette.base,
+            active_tab = active_tab,
+            inactive_tab = inactive_tab,
+            inactive_tab_hover = active_tab,
+            new_tab = inactive_tab,
+            new_tab_hover = active_tab,
+        }
+    }
+end
+
+-- Configuration
+
+local wezterm = require "wezterm"
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function(cmd)
+    local tab, pane, window = mux.spawn_window(cmd or {})
+    pane:split { size = 32 }
+    pane:split { size = 100 }
+end)
 
 return {
-  front_end = "WebGpu",
-  default_prog = {
-    '/opt/homebrew/bin/nu',
-    '-l'
-  },
-  -- Font Conf
-  freetype_render_target = "HorizontalLcd",
-  font = wezterm.font_with_fallback {
-    {
-      family = "JetBrainsMono Nerd Font Mono",
-      harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
-    }
-  },
-  font_size = 14,
-  -- Shorcuts
-  keys = {
-    {
-      key = "f",
-      mods = "CTRL|CMD",
-      action = wezterm.action.ToggleFullScreen
+    front_end = "WebGpu",
+    default_prog = {
+        "/opt/homebrew/bin/nu",
+        "-l"
     },
-  },
-  -- Window
-  cell_width = 0.9,
-  initial_cols = 120,
-  initial_rows = 50,
-  use_fancy_tab_bar = false,
-  tab_bar_at_bottom = true,
-  hide_tab_bar_if_only_one_tab = true,
-  enable_tab_bar = false,
-  native_macos_fullscreen_mode = true,
-  window_close_confirmation = 'NeverPrompt',
-  window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
-  },
-  colors = {
-    -- Rose Pine theme
-    foreground = "#575279",
-    background = "#faf4ed",
-    cursor_fg = "#575279",
-    cursor_bg = "#cecacd",
-    selection_fg = "#dfdad9",
-    selection_bg = "#575279",
-    brights = {
-      "#9893a5",
-      "#b4637a",
-      "#286983",
-      "#ea9d34",
-      "#56949f",
-      "#907aa9",
-      "#d7827e",
-      "#575279",
+    freetype_render_target = "HorizontalLcd",
+    font = wezterm.font_with_fallback {
+        { family = "Iosevka Fixed" },
+        { family = "Symbols Nerd Font Mono", scale = 0.6 },
     },
-    ansi = {
-      "#f2e9e1",
-      "#b4637a",
-      "#286983",
-      "#ea9d34",
-      "#56949f",
-      "#907aa9",
-      "#d7827e",
-      "#575279",
+    font_size = 15,
+    initial_cols = 166,
+    initial_rows = 47,
+    window_padding = {
+        left = "0.5cell",
+        right = "0.5cell",
+        top = "0.5cell",
+        bottom = "0.5cell",
     },
-    tab_bar = {
-      background = "#faf4ed",
-      active_tab = {
-        bg_color = "#faf4ed",
-        fg_color = "#575279",
-      },
-      inactive_tab = {
-        bg_color = "#faf4ed",
-        fg_color = "#9893a5",
-      },
-      inactive_tab_hover = {
-        bg_color = "#faf4ed",
-        fg_color = "#575279",
-      },
-      new_tab = {
-        bg_color = "#faf4ed",
-        fg_color = "#9893a5",
-      },
-      new_tab_hover = {
-        bg_color = "#faf4ed",
-        fg_color = "#575279",
-      },
-      inactive_tab_edge = "#9893a5",
+    use_fancy_tab_bar = false,
+    enable_tab_bar = false,
+    native_macos_fullscreen_mode = true,
+    window_close_confirmation = "NeverPrompt",
+    colors = colors(),
+    keys = {
+        {
+            mods = 'CMD',
+            key = 't',
+            action = wezterm.action_callback(function(window, pane)
+                local mux = window:mux_window()
+                local current_wd = pane:get_current_working_dir()
+                local new_tab, new_pane, new_window = mux:spawn_tab {
+                    cwd = wezterm.home_dir
+                }
+                new_pane:split { size = 32 }
+                new_pane:split {
+                    size = 100,
+                    cwd = string.gsub(current_wd, 'file://', '')
+                }
+            end),
+        },
     },
-  },
 }
+

@@ -18,14 +18,21 @@ home_symbol = ""
 format = '[ $path ](bold inverted white)'
 
 [directory.substitutions]
+"/Documents/" = " "
 "/Documents" = ""
+"/Downloads/" = " "
 "/Downloads" = ""
+"/Music/" = "󰲸 "
 "/Music" = "󰲸"
+"/Movies/" = "󰯜 "
 "/Movies" = "󰯜"
+"/Pictures/" = " "
 "/Pictures" = ""
+"/Public/" = " "
 "/Public" = ""
+"/Sources/" = "󰗀 "
 "/Sources" = "󰗀"
-"/" = "  "
+"/" = " "
 
 [git_branch]
 style = 'bold inverted blue'

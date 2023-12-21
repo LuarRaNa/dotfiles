@@ -1,9 +1,10 @@
 theme = "rose_pine_dawn"
 
 [editor]
-rulers = [80, 120]
 auto-save = true
 bufferline = "always"
+cursorline = true
+color-modes = true
 
 [editor.file-picker]
 hidden = false
@@ -17,19 +18,22 @@ character = "╎"
 display-messages = true
 
 [editor.statusline]
+mode.normal = "N"
+mode.insert = "I"
+mode.select = "S"
 left = [
   "mode",
-  "version-control",
+  # "version-control",
   "spinner",
   "diagnostics",
-  "workspace-diagnostics"
+  "workspace-diagnostics",
+  "file-name",
 ]
-center = ["file-name"]
+center = []
 right = [
   "selections",
   "primary-selection-length",
   "position",
-  "position-percentage",
   "total-line-numbers",
   "file-encoding",
   "file-line-ending",
@@ -45,7 +49,7 @@ space = "␣"
 nbsp = "␣"
 tab = "␉"
 newline = "␤"
-tabpad = "␣" # Tabs will look like "␉···" (depending on tab width)
+tabpad = "␣"
 
 [editor.soft-wrap]
 enable = true
