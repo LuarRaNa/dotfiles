@@ -1,0 +1,17 @@
+packages:
+  darwin:
+    brews:
+    - 'chezmoi'
+    - 'docker'
+    - 'docker-compose'
+    - 'docker-credential-helper'
+    - 'fd'
+    - 'gitui'
+    - 'lazygit'
+    - 'lima'
+    - 'nushell'
+    - 'ripgrep'
+    - 'starship'
+    - 'yazi'
+    casks:
+    - 'wezterm'

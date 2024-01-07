@@ -1,34 +1,12 @@
-{{- if (eq .chezmoi.os "darwin") -}}
+{{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-set -eufo pipefail
-
-{{ $brews := list
-     "chezmoi"
-     "fd"
-     "gitui"
-     "lazygit"
-     "nushell"
-     "ripgrep"
-	 "starship" -}}
-
-{{ $casks := list
-	 "alacritty"
-     "wezterm" -}}
-
-{{ if .personal -}}
-{{   $brews = concat $brews (list
-       "elixir"
-       "exercism"
-       "podman") -}}
-{{ end -}}
-
 brew bundle --no-lock --file=/dev/stdin <<EOF
-{{ range ($brews | sortAlpha | uniq) -}}
-brew "{{ . }}"
+{{ range .packages.darwin.brews -}}
+brew {{ . | quote }}
 {{ end -}}
-{{ range ($casks | sortAlpha | uniq) -}}
-cask "{{ . }}"
+{{ range .packages.darwin.casks -}}
+cask {{ . | quote }}
 {{ end -}}
 EOF
 {{ end -}}
