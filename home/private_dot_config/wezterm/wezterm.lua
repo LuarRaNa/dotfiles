@@ -1,3 +1,76 @@
+-- Theme Configuration
+-- Rose Pine Dawn, from official website
+
+local palette = {
+    base = "#faf4ed",
+    surface = "#fffaf3",
+    overlay = "#f2e9e1",
+    muted = "#9893a5",
+    subtle = "#797593",
+    text = "#575279",
+    love = "#b4637a",
+    gold = "#ea9d34",
+    rose = "#d7827e",
+    pine = "#286983",
+    foam = "#56949f",
+    iris = "#907aa9",
+    highlight_low = "#f4ede8",
+    highlight_med = "#dfdad9",
+    highlight_high = "#cecacd",
+}
+
+local active_tab = {
+    bg_color = palette.overlay,
+    fg_color = palette.text,
+}
+
+local inactive_tab = {
+    bg_color = palette.base,
+    fg_color = palette.muted,
+}
+
+function colors()
+    return {
+        foreground = palette.text,
+        background = palette.base,
+        cursor_bg = palette.muted,
+        cursor_border = palette.muted,
+        cursor_fg = palette.text,
+        selection_bg = palette.overlay,
+        selection_fg = palette.text,
+        ansi = {
+            palette.surface,
+            palette.love,
+            palette.pine,
+            palette.gold,
+            palette.foam,
+            palette.iris,
+            palette.rose,
+            palette.text
+        },
+        brights = {
+            palette.subtle,
+            palette.love,
+            palette.pine,
+            palette.gold,
+            palette.foam,
+            palette.iris,
+            palette.rose,
+            palette.text
+        },
+        tab_bar = {
+            background = palette.base,
+            active_tab = active_tab,
+            inactive_tab = inactive_tab,
+            inactive_tab_hover = active_tab,
+            new_tab = inactive_tab,
+            new_tab_hover = active_tab,
+        }
+    }
+end
+
+-- Configuration
+
 local wezterm = require "wezterm"
 
 return {
@@ -24,7 +97,7 @@ return {
     enable_tab_bar = false,
     native_macos_fullscreen_mode = true,
     window_close_confirmation = "NeverPrompt",
-    color_scheme = 'AdventureTime',
+    colors = colors(),
     keys = {
         {
             mods = 'CMD|SHIFT',
