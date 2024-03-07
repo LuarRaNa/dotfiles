@@ -81,12 +81,13 @@ return {
     },
     freetype_render_target = "HorizontalLcd",
     font = wezterm.font_with_fallback {
-        { family = "Iosevka Fixed" },
-        { family = "Symbols Nerd Font Mono", scale = 0.6 },
+        { family = "Iosevka Custom" },
+        { family = "Symbols Nerd Font Mono", scale = 0.5 },
     },
-    font_size = 13,
+    allow_square_glyphs_to_overflow_width = "Never",
+    font_size = 15,
     initial_cols = 186,
-    initial_rows = 54,
+    initial_rows = 60,
     window_padding = {
         left = "0.5cell",
         right = "0.5cell",
@@ -108,9 +109,9 @@ return {
                 local new_tab, new_pane, new_window = mux:spawn_tab {
                     cwd = wezterm.home_dir
                 }
-                new_pane:split { size = 41 }
+                new_pane:split { size = 37 }
                 new_pane:split {
-                    size = 100,
+                    size = 110,
                     cwd = url.file_path
                 }
             end),

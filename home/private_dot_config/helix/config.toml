@@ -4,15 +4,14 @@ theme = "rose_pine_dawn"
 auto-save = true
 bufferline = "always"
 cursorline = true
+undercurl = true
 color-modes = true
-
-[editor.file-picker]
-hidden = false
-parents = false
+text-width = 100
+rulers = [80, 100]
 
 [editor.indent-guides]
 render = true
-character = "╎"
+character = "▏"
 
 [editor.lsp]
 display-messages = true
@@ -23,7 +22,6 @@ mode.insert = "I"
 mode.select = "S"
 left = [
   "mode",
-  # "version-control",
   "spinner",
   "diagnostics",
   "workspace-diagnostics",
@@ -45,12 +43,15 @@ separator = "│"
 render = "all"
 
 [editor.whitespace.characters]
-space = "␣"
-nbsp = "␣"
+space = "·"
+nbsp = "·"
 tab = "␉"
 newline = "␤"
-tabpad = "␣"
+tabpad = "·"
 
 [editor.soft-wrap]
 enable = true
-wrap-indicator = "␊"
+max-indent-retain = 50
+max-wrap = 0
+wrap-indicator = ""
+wrap-at-text-width = true
