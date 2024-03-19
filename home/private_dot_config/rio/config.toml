@@ -1,0 +1,94 @@
+# Configuración
+editor = "/opt/homebrew/bin/hx"
+confirm-before-quit = false
+draw_bold_text_with_bright_colors = false
+# line-height = 1.0
+
+[navigation]
+mode = "CollapsedTab"
+
+[keyboard]
+use-kitty-keyboard-protocol = true
+disable-ctlseqs-alt = true
+
+# [renderer]
+# performance = "High"
+# backend = "Metal"
+# disable-unfocused-render = false
+
+[window]
+# 16X32 cell
+# Cell size: 18 x 29
+# Width: 1920, Height: 1760
+width = 1080
+height = 798
+mode = "Windowed"
+
+[shell]
+program = "/opt/homebrew/bin/nu"
+args = ["--login"]
+
+[fonts]
+# family = "Iosevka Custom"
+size = 15
+
+[fonts.regular]
+family = "Iosevka Custom"
+style = "normal"
+weight = 500
+
+[fonts.bold]
+family = "Iosevka Custom"
+style = "normal"
+weight = 800
+
+[fonts.italic]
+family = "Iosevka Custom"
+style = "italic"
+weight = 500
+
+[fonts.bold-italic]
+family = "Iosevka Custom"
+style = "italic"
+weight = 800
+
+[colors]
+# Regular colors
+background = "#faf4ed"
+black = "#faf4ed"
+blue = "#57949f"
+cyan = "#296983"
+foreground = "#575279"
+green = "#3daa8e"
+magenta = "#7c697f"
+red = "#b4647a"
+white = "#575279"
+yellow = "#e99d35"
+
+# UI colors
+tabs = '#12B5E5'
+tabs-active = '#FCBA28'
+selection-foreground = '#0F0D0E'
+selection-background = '#44C9F0'
+
+# Dim colors
+dim-black = "#575279"
+dim-blue = "#2f484d"
+dim-cyan = "#1b3541"
+dim-foreground = "#faf4ed"
+dim-green = "#265245"
+dim-magenta = "#3e353f"
+dim-red = "#57333d"
+dim-white = "#827e98"
+dim-yellow = "#854a1e"
+
+# Light colors
+light-black = "#b8b2ba"
+light-blue = "#acc9ce"
+light-cyan = "#97b1c0"
+light-foreground = "#575279"
+light-green = "#a5d5c5"
+light-magenta = "#bcb1bd"
+light-red = "#dcb0bb"
+light-white = "#575279"
+light-yellow = "#fccd9b"
