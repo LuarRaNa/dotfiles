@@ -1,0 +1,79 @@
+//1111111122222222223333333333444444444455555555556666666666777777777788888888889999999999000000000011111111112222222222
+{
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark"
+  },
+  "auto_update": false,
+  "restore_on_startup": "none",
+  "format_on_save": "off",
+  "vim_mode": true,
+  "preferred_line_length": 100,
+  "soft_wrap": "preferred_line_length",
+  "wrap_guides": [80, 100],
+  "show_whitespaces": "all",
+  "ui_font_size": 15,
+  "ui_font_family": "Iosevka Custom",
+  "buffer_font_size": 15,
+  "centered_layout": {
+    "left_padding": 0.16,
+    "right_padding": 0.16
+  },
+  "buffer_font_family": "Iosevka Custom",
+  "buffer_line_height": {
+    "custom": 1
+  },
+  "terminal": {
+    "default_height": 880,
+    "shell": {
+      "with_arguments": {
+        "program": "/opt/homebrew/bin/nu",
+        "args": ["-l"]
+      }
+    },
+    "line_height": {
+      "custom": 1
+    }
+  },
+  "project_panel": {
+    "default_width": 450,
+    "dock": "left",
+    "indent_size": 5,
+    "auto_reveal_entries": false
+  },
+  "assistant": {
+    "version": "1",
+    "default_width": 450,
+    "dock": "left"
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_multiline_find": true,
+    "use_smartcase_find": false
+  },
+  "inlay_hints": {
+    "enabled": true,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+  "languages": {
+    "Elixir": {
+      "format_on_save": {
+        "external": {
+          "command": "mix",
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
+        }
+      }
+    }
+  }
+}
