@@ -1,7 +1,6 @@
 {{- if (not .ephemeral) }}
 {{-   $fontDir := "" }}
 {{-   $baseURL := "https://raw.githubusercontent.com/LuarRaNa/dotfiles/main/assets/Archive.zip" }}
-{{-   $baseURL2 := "https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/NerdFontsSymbolsOnly/SymbolsNerdFontMono-Regular.ttf"}}
 {{-   if eq .chezmoi.os "darwin" }}
 {{-     $fontDir = "Library/Fonts" }}
 {{-   else if eq .chezmoi.os "linux" }}
@@ -17,8 +16,4 @@
         "IosevkaCustom-Oblique.ttf",
         "IosevkaCustom-Regular.ttf"
     ]
-["{{ $fontDir }}/SymbolsNerdFontMono-Regular.ttf"]
-    type = "file"
-    url = "{{ $baseURL2 }}"
-    refreshPeriod = "168h"
 {{- end }}

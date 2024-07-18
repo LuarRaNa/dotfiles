@@ -12,38 +12,21 @@ $character\
 
 [username]
 show_always = true
-format = "[  $user in ](bold inverted cyan)"
+format = "[$user IN ](bold cyan)"
 
 [directory]
-home_symbol = ""
-format = "[ $path ](bold inverted white)"
-
-[directory.substitutions]
-"/Documents/" = " "
-"/Documents" = ""
-"/Downloads/" = " "
-"/Downloads" = ""
-"/Music/" = "󰲸 "
-"/Music" = "󰲸"
-"/Movies/" = "󰯜 "
-"/Movies" = "󰯜"
-"/Pictures/" = " "
-"/Pictures" = ""
-"/Public/" = " "
-"/Public" = ""
-"/Sources/" = "󰗀 "
-"/Sources" = "󰗀"
-"/" = " "
+home_symbol = "HOME"
+format = "[$path ](bold white)"
 
 [git_branch]
-style = "bold inverted blue"
-symbol = " "
-format = "[\n on $symbol$branch(:$remote_branch) ]($style)"
+style = "bold blue"
+symbol = "BRANCH "
+format = "[\nON $symbol$branch(:$remote_branch) ]($style)"
 
 [docker_context]
-symbol = " "
-style = "bold inverted purple"
-format = "[\n via $symbol$context ]($style)"
+symbol = "DOCKER "
+style = "bold purple"
+format = "[\nVIA $symbol$context ]($style)"
 
 [character]
 success_symbol = ""
@@ -55,4 +38,3 @@ disabled = true
 
 [battery]
 disabled = true
-
