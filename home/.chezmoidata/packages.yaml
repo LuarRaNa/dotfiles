@@ -1,6 +1,7 @@
 packages:
   darwin:
     brews:
+    - 'age'
     - 'chezmoi'
     - 'docker'
     - 'docker-compose'
