@@ -15,4 +15,6 @@ packages:
     - 'starship'
     - 'yazi'
     casks:
-    - 'wezterm'
+    - 'iterm2'
+    - 'tableplus'
+    - 'zed'

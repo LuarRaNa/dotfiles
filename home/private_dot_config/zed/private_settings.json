@@ -2,8 +2,8 @@
 {
   "theme": {
     "mode": "system",
-    "light": "Dracula Pro (Alucard)",
-    "dark": "Dracula Pro"
+    "light": "One Light",
+    "dark": "One Dark"
   },
   "auto_update": false,
   "restore_on_startup": "none",
@@ -21,8 +21,8 @@
     "custom": 1
   },
   "centered_layout": {
-    "left_padding": 0.16,
-    "right_padding": 0.16
+    "left_padding": 0.24,
+    "right_padding": 0.24
   },
   "indent_guides": {
     "enabled": true,
@@ -31,8 +31,11 @@
     "coloring": "indent_aware",
     "background_coloring": "disabled"
   },
+  "gutter": {
+    "line_numbers": false
+  },
   "terminal": {
-    "default_height": 880,
+    "default_height": 900,
     "shell": {
       "with_arguments": {
         "program": "/opt/homebrew/bin/nu",
@@ -44,15 +47,20 @@
     }
   },
   "project_panel": {
-    "default_width": 450,
+    "default_width": 440,
     "dock": "left",
     "indent_size": 5,
     "auto_reveal_entries": false
   },
   "assistant": {
-    "version": "1",
-    "default_width": 450,
+    "version": "2",
+    "default_width": 440,
     "dock": "left"
+  },
+  "outline_panel": {
+    "default_width": 300,
+    "dock": "right",
+    "indent_size": 5
   },
   "tabs": {
     "git_status": true
