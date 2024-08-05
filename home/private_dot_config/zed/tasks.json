@@ -1,12 +1,5 @@
 [
   {
-    "label": "Open lazygit",
-    "command": "lazygit",
-    "use_new_terminal": true,
-    "allow_concurrent_runs": false,
-    "reveal": "always"
-  },
-  {
     "label": "Open iTerm",
     "command": "osascript",
     "args": [
@@ -15,6 +8,49 @@
     ],
     "use_new_terminal": false,
     "allow_concurrent_runs": false,
-    "reveal": "never"
+    "reveal": "never",
+    "hide": "always",
+    "shell": {
+      "with_arguments": {
+        "program": "/opt/homebrew/bin/nu",
+        "args": ["-l"]
+      }
+    }
+  },
+  {
+    "label": "Open Lazygit in iTerm",
+    "command": "osascript",
+    "args": [
+      "-e",
+      "$\"tell application \\\"iTerm\\\"\\n activate\\n delay 0.5\\n tell current session of current window\\n write text \\\"cd ($env.PWD); lazygit\\\"\\n end tell\\n end tell\""
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never",
+    "hide": "always",
+    "shell": {
+      "with_arguments": {
+        "program": "/opt/homebrew/bin/nu",
+        "args": ["-l"]
+      }
+    }
+  },
+  {
+    "label": "Open Gitui in iTerm",
+    "command": "osascript",
+    "args": [
+      "-e",
+      "$\"tell application \\\"iTerm\\\"\\n activate\\n delay 0.5\\n tell current session of current window\\n write text \\\"cd ($env.PWD); gitui\\\"\\n end tell\\n end tell\""
+    ],
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "never",
+    "hide": "always",
+    "shell": {
+      "with_arguments": {
+        "program": "/opt/homebrew/bin/nu",
+        "args": ["-l"]
+      }
+    }
   }
 ]

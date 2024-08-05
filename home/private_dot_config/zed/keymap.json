@@ -1,0 +1,14 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-alt-ctrl-a": ["workspace::SendKeystrokes", "cmd-? shift-escape"]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "cmd-alt-ctrl-o": "workspace::ToggleCenteredLayout"
+    }
+  }
+]
