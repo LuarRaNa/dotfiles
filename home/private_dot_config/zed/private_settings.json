@@ -13,9 +13,9 @@
   "soft_wrap": "none",
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "all",
-  "ui_font_size": 14,
+  "ui_font_size": 15,
   "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 14,
+  "buffer_font_size": 15,
   "buffer_font_family": "Iosevka Custom",
   "buffer_line_height": {
     "custom": 1
@@ -81,7 +81,7 @@
     "use_smartcase_find": false
   },
   "inlay_hints": {
-    "enabled": true,
+    "enabled": false,
     "show_type_hints": true,
     "show_parameter_hints": true,
     "show_other_hints": true,

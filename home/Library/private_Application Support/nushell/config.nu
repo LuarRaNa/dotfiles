@@ -1,6 +1,7 @@
 # Nushell Config File
 $env.config = {
   show_banner: false
+  edit_mode: vi
 
   ls: {
     use_ls_colors: false
@@ -12,7 +13,7 @@ $env.config = {
   }
 
   table: {
-    mode: rounded
+    mode: ascii_rounded
     header_on_separator: true
     index_mode: always
   }
