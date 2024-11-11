@@ -13,7 +13,7 @@ $env.config = {
   }
 
   table: {
-    mode: ascii_rounded
+    mode: psql
     header_on_separator: true
     index_mode: always
   }
