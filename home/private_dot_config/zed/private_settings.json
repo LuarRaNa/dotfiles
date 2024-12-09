@@ -13,9 +13,9 @@
   "soft_wrap": "preferred_line_length",
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "all",
-  "ui_font_size": 13,
+  "ui_font_size": 15,
   "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 13,
+  "buffer_font_size": 15,
   "buffer_font_family": "Iosevka Custom",
   "buffer_line_height": {
     "custom": 1
@@ -50,7 +50,7 @@
     }
   },
   "project_panel": {
-    "default_width": 695,
+    "default_width": 650,
     "dock": "left",
     "indent_size": 10,
     "auto_reveal_entries": true
@@ -61,11 +61,11 @@
       "model": "claude-3-5-sonnet"
     },
     "version": "2",
-    "default_width": 695,
+    "default_width": 650,
     "dock": "left"
   },
   "outline_panel": {
-    "default_width": 695,
+    "default_width": 650,
     "dock": "left",
     "indent_size": 10
   },
@@ -87,6 +87,10 @@
     "show_other_hints": true,
     "edit_debounce_ms": 700,
     "scroll_debounce_ms": 50
+  },
+  "file_finder": {
+    "file_icons": true,
+    "modal_max_width": "large"
   },
   "languages": {
     "Elixir": {
