@@ -13,10 +13,10 @@
   "soft_wrap": "preferred_line_length",
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "all",
-  "ui_font_size": 15,
-  "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 15,
-  "buffer_font_family": "Iosevka Custom",
+  "ui_font_size": 16,
+  "ui_font_family": "Sudo",
+  "buffer_font_size": 16,
+  "buffer_font_family": "Sudo",
   "buffer_line_height": {
     "custom": 1
   },

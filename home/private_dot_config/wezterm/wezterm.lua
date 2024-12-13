@@ -1,65 +1,93 @@
 -- Theme Configuration
--- Rose Pine Dawn, from Zed Colors
-
-local palette = {
-    base = "#191724",
-    surface = "#fffaf3",
-    overlay = "#f2e9e1",
-    muted = "#9893a5",
-    subtle = "#797593",
-    text = "#e0def4",
-    love = "#b4637a",
-    gold = "#ea9d34",
-    rose = "#d7827e",
-    pine = "#286983",
-    foam = "#56949f",
-    iris = "#907aa9",
-    highlight_low = "#f4ede8",
-    highlight_med = "#dfdad9",
-    highlight_high = "#cecacd",
+-- One Dark, from Zed Colors
+local one_dark = {
+    base = 'rgba(47, 52, 62, 1)',
+    surface = 'rgba(47, 52, 62, 1)',
+    overlay = 'rgba(40, 44, 51, 1)',
+    muted = 'rgba(169, 175, 188, 1)',
+    subtle = 'rgba(135, 138, 152, 1)',
+    text = 'rgba(220, 224, 229, 1)',
     -- Zed Colors
-    background = "#faf4ed",
-    black = "#faf4ed",
-    blue = "#57949f",
-    bright_black = "#b8b2ba",
-    bright_blue = "#acc9ce",
-    bright_cyan = "#97b1c0",
-    bright_foreground = "#575279",
-    bright_green = "#a5d5c5",
-    bright_magenta = "#bcb1bd",
-    bright_red = "#dcb0bb",
-    bright_white = "#575279",
-    bright_yellow = "#fccd9b",
-    cyan = "#296983",
-    dim_black = "#575279",
-    dim_blue = "#2f484d",
-    dim_cyan = "#1b3541",
-    dim_foreground = "#faf4ed",
-    dim_green = "#265245",
-    dim_magenta = "#3e353f",
-    dim_red = "#57333d",
-    dim_white = "#827e98",
-    dim_yellow = "#854a1e",
-    foreground = "#575279",
-    green = "#3daa8e",
-    magenta = "#7c697f",
-    red = "#b4647a",
-    white = "#575279",
-    yellow = "#e99d35"
-
+    background = 'rgba(40, 44, 51, 1)',
+    black = 'rgba(40, 44, 51, 1)',
+    blue = 'rgba(116, 173, 232, 1)',
+    bright_black = 'rgba(82, 85, 97, 1)',
+    bright_blue = 'rgba(56, 83, 120, 1)',
+    bright_cyan = 'rgba(58, 86, 91, 1)',
+    bright_foreground = 'rgba(220, 224, 229, 1)',
+    bright_green = 'rgba(77, 97, 64, 1)',
+    bright_magenta = 'rgba(94, 43, 38, 1)',
+    bright_red = 'rgba(103, 58, 60, 1)',
+    bright_white = 'rgba(220, 224, 229, 1)',
+    bright_yellow = 'rgba(120, 100, 65, 1)',
+    cyan = 'rgba(110, 180, 191, 1)',
+    dim_black = 'rgba(220, 224, 229, 1)',
+    dim_blue = 'rgba(190, 213, 244, 1)',
+    dim_cyan = 'rgba(185, 217, 223, 1)',
+    dim_foreground = 'rgba(40, 44, 51, 1)',
+    dim_green = 'rgba(209, 224, 191, 1)',
+    dim_magenta = 'rgba(230, 167, 158, 1)',
+    dim_red = 'rgba(234, 183, 185, 1)',
+    dim_white = 'rgba(87, 93, 101, 1)',
+    dim_yellow = 'rgba(241, 223, 193, 1)',
+    foreground = 'rgba(220, 224, 229, 1)',
+    green = 'rgba(161, 193, 129, 1)',
+    magenta = 'rgba(190, 80, 70, 1)',
+    red = 'rgba(208, 114, 119, 1)',
+    white = 'rgba(220, 224, 229, 1)',
+    yellow = 'rgba(222, 193, 132, 1)'
 }
 
-local active_tab = {
-    bg_color = palette.overlay,
-    fg_color = palette.text,
+-- One Light, from Zed Colors
+local one_light = {
+    base = 'rgba(235, 235, 236, 1)',
+    surface = 'rgba(235, 235, 236, 1)',
+    overlay = 'rgba(250, 250, 250, 1)',
+    muted = 'rgba(88, 88, 90, 1)',
+    subtle = 'rgba(126, 128, 134, 1)',
+    text = 'rgba(36, 37, 41, 1)',
+    -- Zed Colors
+    background = 'rgba(250,250,250,1)',
+    black = 'rgba(250,250,250,1)',
+    blue = 'rgba(92, 120, 226, 1)',
+    bright_black = 'rgba(170,170,170,1)',
+    bright_blue = 'rgba(181, 186, 242, 1)',
+    bright_cyan = 'rgba(163, 190, 218, 1)',
+    bright_foreground = 'rgba(36, 37, 41, 1)',
+    bright_green = 'rgba(178, 207, 169, 1)',
+    bright_magenta = 'rgba(206, 166, 211, 1)',
+    bright_red = 'rgba(240, 176, 164, 1)',
+    bright_white = 'rgba(36, 37, 41, 1)',
+    bright_yellow = 'rgba(241, 223, 193, 1)',
+    cyan = 'rgba(58, 130, 183, 1)',
+    dim_black = 'rgba(36, 37, 41, 1)',
+    dim_blue = 'rgba(45, 61, 117, 1)',
+    dim_cyan = 'rgba(37, 64, 88, 1)',
+    dim_foreground = 'rgba(250,250,250,1)',
+    dim_green = 'rgba(53, 77, 46, 1)',
+    dim_magenta = 'rgba(75, 42, 80, 1)',
+    dim_red = 'rgba(111, 49, 42, 1)',
+    dim_white = 'rgba(151, 151, 154, 1)',
+    dim_yellow = 'rgba(120, 100, 65, 1)',
+    foreground = 'rgba(36, 37, 41, 1)',
+    green = 'rgba(102, 159, 89, 1)',
+    magenta = 'rgba(152, 78, 165, 1)',
+    red = 'rgba(211, 97, 81, 1)',
+    white = 'rgba(36, 37, 41, 1)',
+    yellow = 'rgba(222, 193, 132, 1)'
 }
 
-local inactive_tab = {
-    bg_color = palette.base,
-    fg_color = palette.muted,
-}
+local function colors(palette)
+    local active_tab = {
+        bg_color = palette.overlay,
+        fg_color = palette.text,
+    }
 
-function colors()
+    local inactive_tab = {
+        bg_color = palette.base,
+        fg_color = palette.muted,
+    }
+
     return {
         foreground = palette.foreground,
         background = palette.background,
@@ -88,16 +116,6 @@ function colors()
             palette.bright_cyan,
             palette.bright_white
         },
-        -- indexed = {
-            -- [259] = palette.dim_black,
-            -- [260] = palette.dim_red,
-            -- [261] = palette.dim_green,
-            -- [262] = palette.dim_yellow,
-            -- [263] = palette.dim_blue,
-            -- [264] = palette.dim_magenta,
-            -- [265] = palette.dim_cyan,
-            -- [266] = palette.dim_white,
-        -- },
         tab_bar = {
             background = palette.base,
             active_tab = active_tab,
@@ -113,6 +131,21 @@ end
 
 local wezterm = require "wezterm"
 
+local function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return 'Light'
+end
+
+local function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return one_dark
+  else
+    return one_light
+  end
+end
+
 return {
     front_end = "WebGpu",
     default_prog = {
@@ -121,25 +154,25 @@ return {
     },
     freetype_render_target = "HorizontalLcd",
     font = wezterm.font_with_fallback {
-        { family = "Iosevka Custom" },
-        { family = "Symbols Nerd Font Mono", scale = 0.5 },
+        { family = "Sudo" }
     },
     bold_brightens_ansi_colors = "No",
     allow_square_glyphs_to_overflow_width = "Never",
-    font_size = 15,
-    initial_cols = 120,
-    initial_rows = 60,
+    custom_block_glyphs = false,
+    font_size = 16,
+    initial_cols = 150,
+    initial_rows = 50,
     window_padding = {
-        left = "0.5cell",
-        right = "0.5cell",
-        top = "0.5cell",
-        bottom = "0.5cell",
+        left = "0cell",
+        right = "0cell",
+        top = "0cell",
+        bottom = "0cell",
     },
     use_fancy_tab_bar = false,
     enable_tab_bar = false,
     native_macos_fullscreen_mode = true,
     window_close_confirmation = "NeverPrompt",
-    colors = colors(),
+    colors = colors(scheme_for_appearance(get_appearance())),
     keys = {
         {
             mods = 'CMD|SHIFT',
