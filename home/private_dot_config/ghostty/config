@@ -1,0 +1,11 @@
+command = /opt/homebrew/bin/nu
+theme = dark:dark,light:light
+font-family = Iosevka Custom
+font-size = 15
+font-thicken = true
+window-padding-x = 0
+window-padding-y = 0
+window-height = 50
+window-width = 150
+shell-integration-features = cursor, sudo, title
+macos-titlebar-style = tabs
