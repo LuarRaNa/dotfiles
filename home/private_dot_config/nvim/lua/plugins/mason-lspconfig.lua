@@ -14,6 +14,7 @@ return {
       keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations({ reuse_win = true }) end, opts)
       opts.desc = "Go To Type Definitions"
       keymap.set("n", "gy", function() require("telescope.builtin").lsp_type_definitions({ reuse_win = true }) end, opts)
+      opts.desc = "Format from LSP"
       keymap.set({ 'n', 'x' }, 'gf', function() vim.lsp.buf.format({ async = false, timeout_ms = 10000 }) end, opts)
     end
 

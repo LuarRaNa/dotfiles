@@ -7,10 +7,12 @@ return {
       scroll_down = "<Down>",
       scroll_up = "<Up>",
     },
+    icons = {
+      mappings = false,
+    },
     spec = {
       {
         mode = { "n", "v" },
-        { "z",  group = "fold" },
         {
           "<leader>b",
           group = "buffer",
@@ -18,26 +20,10 @@ return {
             return require("which-key.extras").expand.buf()
           end,
         },
-        {
-          "<leader>w",
-          group = "windows",
-          proxy = "<c-w>",
-          expand = function()
-            return require("which-key.extras").expand.win()
-          end,
-        },
-        { "gx", desc = "Open with system app" },
+        { "<leader>c", "<cmd>NoNeckPain<cr>", desc = "Centered Mode" },
+        { "<leader>w", proxy = "<c-w>",       group = "windows" },
+        { "<leader>q", "<cmd>q<cr>",          desc = "Quit" },
       },
     },
-  },
-  keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
-    },
-    { "<leader>c", "<cmd>NoNeckPain<cr>", desc = "Centered Mode" },
   },
 }

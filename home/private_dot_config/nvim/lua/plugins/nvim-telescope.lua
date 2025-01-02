@@ -9,12 +9,11 @@ return {
       desc = "Switch Buffer",
     },
     { "<leader>ff", "<cmd>Telescope find_files<cr>",      desc = "Find Files" },
-    { "<leader>fg", "<cmd>Telescope live_grep<cr>",       desc = "Find Word In Workspace" },
-    { "<leader>:",  "<cmd>Telescope command_history<cr>", desc = "Command History" },
-    { "<leader>/",  "<cmd>Telescope grep_string<cr>",     desc = "Find Word Under Cursor" },
+    { "<leader>sl", "<cmd>Telescope live_grep<cr>",       desc = "Find Word In Workspace" },
+    { "<leader>s:", "<cmd>Telescope command_history<cr>", desc = "Command History" },
     { "<leader>ss", "<cmd>Telescope grep_string<cr>",     desc = "Find Word Under Cursor" },
     {
-      "<leader>ss",
+      "<leader>ts",
       function()
         require("telescope.builtin").lsp_document_symbols({
         })
@@ -22,7 +21,7 @@ return {
       desc = "Goto Symbol",
     },
     {
-      "<leader>sS",
+      "<leader>tS",
       function()
         require("telescope.builtin").lsp_dynamic_workspace_symbols({
         })

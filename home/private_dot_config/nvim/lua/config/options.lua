@@ -10,8 +10,6 @@ vim.opt.shiftwidth = 2
 
 vim.opt.clipboard = "unnamedplus"
 
-vim.opt.scrolloff = 999
-
 vim.opt.virtualedit = "block"
 
 vim.opt.ignorecase = true
