@@ -17,3 +17,6 @@ vim.opt.ignorecase = true
 vim.opt.termguicolors = true
 
 vim.opt.wrap = false
+
+vim.opt.diffopt = { "vertical", "internal", "linematch:60" }
+

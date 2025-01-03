@@ -9,3 +9,4 @@ window-height = 60
 window-width = 214
 shell-integration-features = cursor, sudo, title
 macos-titlebar-style = tabs
+macos-option-as-alt = false
