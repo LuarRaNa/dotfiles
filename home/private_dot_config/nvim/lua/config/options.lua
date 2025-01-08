@@ -18,5 +18,4 @@ vim.opt.termguicolors = true
 
 vim.opt.wrap = false
 
-vim.opt.diffopt = { "vertical", "internal", "linematch:60" }
-
+vim.opt.diffopt = { "vertical", "internal", "linematch:120", "algorithm:histogram" }
