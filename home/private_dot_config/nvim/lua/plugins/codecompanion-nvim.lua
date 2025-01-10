@@ -15,10 +15,10 @@ return {
         copilot = require("codecompanion.adapters").extend("copilot", {
           schema = {
             model = {
-              default = "claude-3.5-sonnet",
+              default = "gpt-4o-2024-08-06",
             },
             max_tokens = {
-              default = 200000,
+              default = 64000,
             },
           },
         })
@@ -77,33 +77,51 @@ return {
         }
       }
     })
-  end,
-  keys = {
-    { "<leader>aa", "<cmd>CodeCompanionActions<cr>",                           mode = { "v", "n" }, desc = "AI Code Actions" },
-    { "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>",                       mode = { "v", "n" }, desc = "AI Chat Toggle" },
-    { "<leader>ae", function() require("codecompanion").prompt("explain") end, mode = { "v" },      desc = "AI Explain" },
-    { "<leader>af", function() require("codecompanion").prompt("fix") end,     mode = { "v" },      desc = "AI Fix Code" },
-    { "<leader>ai", function() require("codecompanion").prompt("buffer") end,  mode = { "v" },      desc = "AcI Inline Action" },
-    {
-      "<leader>ag",
-      function()
-        require("codecompanion.strategies.chat").new({
-          adapter = require("codecompanion.adapters").extend("copilot", {
-            schema = {
-              model = {
-                default = "gpt-4o-2024-08-06",
+
+    local wk = require("which-key")
+    wk.add({
+      { "<leader>a",  group = "AI assistance" },
+      { "<leader>aa", "<cmd>CodeCompanionActions<cr>",     mode = { "v", "n" }, desc = "AI code actions" },
+      { "<leader>at", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "v", "n" }, desc = "AI chat toggle" },
+      {
+        "<leader>ae",
+        function() require("codecompanion").prompt("explain") end,
+        mode = { "v" },
+        desc = "AI explain"
+      },
+      {
+        "<leader>af",
+        function() require("codecompanion").prompt("fix") end,
+        mode = { "v" },
+        desc = "AI fix Code"
+      },
+      {
+        "<leader>ai",
+        function() require("codecompanion").prompt("buffer") end,
+        mode = { "v" },
+        desc = "AcI inline action"
+      },
+      {
+        "<leader>ac",
+        function()
+          require("codecompanion.strategies.chat").new({
+            adapter = require("codecompanion.adapters").extend("copilot", {
+              schema = {
+                model = {
+                  default = "claude-3.5-sonnet",
+                },
+                max_tokens = {
+                  default = 200000,
+                },
               },
-              max_tokens = {
-                default = 64000,
-              },
-            },
-          }),
-          messages = nil,
-          context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
-        })
-      end,
-      mode = { "v", "n" },
-      desc = "AI Chat GPT-4o"
-    },
-  },
+            }),
+            messages = nil,
+            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
+          })
+        end,
+        mode = { "v", "n" },
+        desc = "AI chat claude 3.5 sonnet"
+      },
+    })
+  end
 }

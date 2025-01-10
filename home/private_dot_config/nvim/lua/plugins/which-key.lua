@@ -20,7 +20,7 @@ return {
             return require("which-key.extras").expand.buf()
           end,
         },
-        { "<leader>c", "<cmd>NoNeckPain<cr>", desc = "Centered Mode" },
+        { "<leader>c", "<cmd>NoNeckPain<cr>", desc = "Centered mode" },
         { "<leader>w", proxy = "<c-w>",       group = "windows" },
         { "<leader>q", "<cmd>q<cr>",          desc = "Quit" },
       },

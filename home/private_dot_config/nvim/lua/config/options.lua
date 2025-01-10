@@ -19,3 +19,10 @@ vim.opt.termguicolors = true
 vim.opt.wrap = false
 
 vim.opt.diffopt = { "vertical", "internal", "linematch:120", "algorithm:histogram" }
+
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldcolumn = "0"
+vim.opt.foldtext = ""
