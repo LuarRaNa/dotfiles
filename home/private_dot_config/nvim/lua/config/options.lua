@@ -26,3 +26,16 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldcolumn = "0"
 vim.opt.foldtext = ""
+
+vim.opt.laststatus = 3
+
+vim.opt.fillchars='eob: '
+
+vim.opt.statusline = table.concat({
+  "[%{toupper(mode())}]",
+  "%* %f",
+  "%m%r%h",
+  "%=",
+  "%([%l/%L : %c %p%%]%)",
+  " %y[%{&fileformat}][%{&fenc==''?&enc:&fenc}]"
+})

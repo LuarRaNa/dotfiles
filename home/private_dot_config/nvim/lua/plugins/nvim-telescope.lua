@@ -32,7 +32,6 @@ return {
         opts
       },
       {
-
         mode = { "n", "x" },
         {
           "<leader>lf",
