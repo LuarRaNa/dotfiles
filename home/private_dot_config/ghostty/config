@@ -1,8 +1,8 @@
 command = /opt/homebrew/bin/nu
-theme = dark:rose-pine-moon,light:rose-pine-dawn
+theme = dark:tokyonight_moon,light:tokyonight-day
 font-family = Iosevka Custom
 font-size = 14
-font-thicken = false
+font-thicken = true
 window-padding-x = 0
 window-padding-y = 0
 window-height = 62
