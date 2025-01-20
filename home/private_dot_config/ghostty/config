@@ -1,5 +1,5 @@
 command = /opt/homebrew/bin/nu
-theme = dark:tokyonight_moon,light:tokyonight-day
+theme = dark:tokyonight-storm,light:tokyonight-day
 font-family = Iosevka Custom
 font-size = 14
 font-thicken = true

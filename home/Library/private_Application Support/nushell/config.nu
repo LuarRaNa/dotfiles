@@ -8,6 +8,10 @@ $env.config = {
     clickable_links: true
   }
 
+  completions: {
+    use_ls_colors: false
+  }
+
   rm: {
     always_trash: true
   }
