@@ -1,12 +1,16 @@
 command = /opt/homebrew/bin/nu
-theme = dark:rose-pine-moon,light:rose-pine-dawn
+theme = dark:dark,light:light
 font-family = Iosevka Custom
-font-size = 14
-font-thicken = false
+font-size = 15
+font-thicken = true
+font-feature = -calt
+font-feature = -liga
+font-feature = -dLig
 window-padding-x = 0
 window-padding-y = 0
-window-height = 62
-window-width = 214
+window-height = 63
+window-width = 200
 shell-integration-features = cursor, sudo, title
-macos-titlebar-style = tabs
+macos-titlebar-style = hidden
 macos-option-as-alt = false
+

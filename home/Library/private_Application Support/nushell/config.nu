@@ -31,7 +31,7 @@ $env.config = {
 
   cursor_shape: {
     emacs: block
-    vi_insert: block
+    vi_insert: line
     vi_normal: block
   }
 }

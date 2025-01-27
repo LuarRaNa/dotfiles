@@ -111,9 +111,9 @@ $env.PROMPT_COMMAND_RIGHT = {|| create_right_prompt }
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
 $env.PROMPT_INDICATOR = {|| " " }
-$env.PROMPT_INDICATOR_VI_INSERT = {|| [(ansi ligr) "I:" (ansi reset) (char space)] | str join }
-$env.PROMPT_INDICATOR_VI_NORMAL = {|| [(ansi ligr) "N:" (ansi reset) (char space)] | str join }
-$env.PROMPT_MULTILINE_INDICATOR = {|| [(ansi ligr) "M:" (ansi reset) (char space)] | str join }
+$env.PROMPT_INDICATOR_VI_INSERT = {|| [(ansi defb) "I:" (ansi reset) (char space)] | str join }
+$env.PROMPT_INDICATOR_VI_NORMAL = {|| [(ansi defb) "N:" (ansi reset) (char space)] | str join }
+$env.PROMPT_MULTILINE_INDICATOR = {|| [(ansi defb) "M:" (ansi reset) (char space)] | str join }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
