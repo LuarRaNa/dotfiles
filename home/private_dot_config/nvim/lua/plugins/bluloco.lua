@@ -4,6 +4,6 @@ return {
   priority = 1000,
   dependencies = { 'rktjmp/lush.nvim' },
   config = function()
-    vim.cmd('colorscheme bluloco')
+    -- vim.cmd('colorscheme bluloco')
   end,
 }

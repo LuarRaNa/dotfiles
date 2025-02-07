@@ -6,35 +6,31 @@ format = """
 $username\
 $directory\
 $git_branch\
-$docker_context\
 $character\
+$line_break
 """
 
 [username]
 show_always = true
-format = "[$user IN ](bold cyan)"
+format = "[USER IN ](bold)"
 
 [directory]
 home_symbol = "HOME"
-format = "[$path ](bold white)"
+format = "[$path ](bold)"
 
 [git_branch]
-style = "bold blue"
+style = "bold"
 symbol = "BRANCH "
-format = "[\nON $symbol$branch(:$remote_branch) ]($style)"
-
-[docker_context]
-symbol = "DOCKER "
-style = "bold purple"
-format = "[\nVIA $symbol$context ]($style)"
-
-[character]
-success_symbol = ""
-error_symbol = ""
-format = "[$symbol\n](hidden)"
+format = "[ON $symbol$branch(:$remote_branch) ]($style)"
 
 [package]
 disabled = true
 
 [battery]
 disabled = true
+
+[character]
+success_symbol = ""
+error_symbol = ""
+vicmd_symbol = ""
+format = "[$symbol](bold)"
