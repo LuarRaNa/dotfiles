@@ -102,6 +102,48 @@ return {
         desc = "AcI inline action"
       },
       {
+        "<leader>ao",
+        function()
+          require("codecompanion.strategies.chat").new({
+            adapter = require("codecompanion.adapters").extend("copilot", {
+              schema = {
+                model = {
+                  default = "o3-mini-2025-01-31",
+                },
+                max_tokens = {
+                  default = 20000,
+                },
+              },
+            }),
+            messages = nil,
+            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
+          })
+        end,
+        mode = { "v", "n" },
+        desc = "AI chat o3 mini"
+      },
+      {
+        "<leader>ag",
+        function()
+          require("codecompanion.strategies.chat").new({
+            adapter = require("codecompanion.adapters").extend("copilot", {
+              schema = {
+                model = {
+                  default = "gemini-2.0-flash-001",
+                },
+                max_tokens = {
+                  default = 20000,
+                },
+              },
+            }),
+            messages = nil,
+            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
+          })
+        end,
+        mode = { "v", "n" },
+        desc = "AI chat gemini 2.0 flash"
+      },
+      {
         "<leader>ac",
         function()
           require("codecompanion.strategies.chat").new({

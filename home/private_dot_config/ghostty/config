@@ -1,15 +1,28 @@
 command = /opt/homebrew/bin/nu
+
 theme = dark:Apple System Colors,light:Apple System Colors Light
+
+font-family = ""
 font-family = SF Mono
+
+font-style = Medium
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
+
+font-synthetic-style = "no-bold, no-bold-italic, no-italic"
 font-size = 12.5
 font-thicken = true
 font-thicken-strength = 0
+
 window-padding-x = 0
 window-padding-y = 0
 window-height = 70
-window-width = 188
+window-width = 190
 window-colorspace = display-p3
+
 shell-integration-features = cursor, sudo, title
+
 macos-titlebar-style = tabs
 macos-option-as-alt = false
 
