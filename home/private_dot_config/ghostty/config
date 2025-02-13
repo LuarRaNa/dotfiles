@@ -1,18 +1,18 @@
 command = /opt/homebrew/bin/nu
 
-theme = dark:Apple System Colors,light:Apple System Colors Light
+theme = dark:BlulocoDark,light:BlulocoLight
 
 font-family = ""
 font-family = SF Mono
 
-font-style = Medium
+font-style = Semibold
 font-style-bold = Bold
-font-style-italic = Medium Italic
+font-style-italic = Semibold Italic
 font-style-bold-italic = Bold Italic
 
 font-synthetic-style = "no-bold, no-bold-italic, no-italic"
 font-size = 12.5
-font-thicken = true
+font-thicken = false
 font-thicken-strength = 0
 
 window-padding-x = 0

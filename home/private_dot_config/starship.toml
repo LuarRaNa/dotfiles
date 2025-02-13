@@ -12,7 +12,7 @@ $line_break
 
 [username]
 show_always = true
-format = "[USER IN ](bold)"
+format = "[|](8)[USER IN ](bold)"
 
 [directory]
 home_symbol = "HOME"
