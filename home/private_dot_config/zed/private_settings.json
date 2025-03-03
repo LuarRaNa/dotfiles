@@ -39,12 +39,6 @@
   },
   "terminal": {
     "default_height": 880,
-    "shell": {
-      "with_arguments": {
-        "program": "/opt/homebrew/bin/nu",
-        "args": ["-l"]
-      }
-    },
     "line_height": {
       "custom": 1
     }

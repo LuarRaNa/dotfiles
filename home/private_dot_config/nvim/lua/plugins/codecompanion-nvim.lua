@@ -14,9 +14,6 @@ return {
       adapters = {
         copilot = require("codecompanion.adapters").extend("copilot", {
           schema = {
-            model = {
-              default = "gpt-4o-2024-08-06",
-            },
             max_tokens = {
               default = 64000,
             },
@@ -72,9 +69,6 @@ return {
         action_palette = {
           provider = "telescope"
         },
-        chat = {
-          show_settings = true
-        }
       }
     })
 
@@ -100,69 +94,6 @@ return {
         function() require("codecompanion").prompt("buffer") end,
         mode = { "v" },
         desc = "AcI inline action"
-      },
-      {
-        "<leader>ao",
-        function()
-          require("codecompanion.strategies.chat").new({
-            adapter = require("codecompanion.adapters").extend("copilot", {
-              schema = {
-                model = {
-                  default = "o3-mini-2025-01-31",
-                },
-                max_tokens = {
-                  default = 20000,
-                },
-              },
-            }),
-            messages = nil,
-            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
-          })
-        end,
-        mode = { "v", "n" },
-        desc = "AI chat o3 mini"
-      },
-      {
-        "<leader>ag",
-        function()
-          require("codecompanion.strategies.chat").new({
-            adapter = require("codecompanion.adapters").extend("copilot", {
-              schema = {
-                model = {
-                  default = "gemini-2.0-flash-001",
-                },
-                max_tokens = {
-                  default = 20000,
-                },
-              },
-            }),
-            messages = nil,
-            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
-          })
-        end,
-        mode = { "v", "n" },
-        desc = "AI chat gemini 2.0 flash"
-      },
-      {
-        "<leader>ac",
-        function()
-          require("codecompanion.strategies.chat").new({
-            adapter = require("codecompanion.adapters").extend("copilot", {
-              schema = {
-                model = {
-                  default = "claude-3.5-sonnet",
-                },
-                max_tokens = {
-                  default = 200000,
-                },
-              },
-            }),
-            messages = nil,
-            context = require("codecompanion.utils.context").get(vim.api.nvim_get_current_buf())
-          })
-        end,
-        mode = { "v", "n" },
-        desc = "AI chat claude 3.5 sonnet"
       },
     })
   end

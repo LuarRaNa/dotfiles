@@ -44,3 +44,4 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
 PROMPT="${PROMPT}"$'\n'
 
+eval "$(fnm env --use-on-cd --shell zsh)"
