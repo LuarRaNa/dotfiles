@@ -1,0 +1,58 @@
+console_title_template = "{{ .Shell }} in {{ .Folder }}"
+version = 3
+final_space = false
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+[[blocks.segments]]
+type = "path"
+style = "plain"
+background = "transparent"
+foreground = "blue"
+template = "{{ .Path }}"
+
+[blocks.segments.properties]
+style = "full"
+
+[[blocks.segments]]
+template = " {{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}\n{{ end }}"
+foreground = "gray"
+background = "transparent"
+type = "text"
+style = "plain"
+
+[[blocks]]
+type = "rprompt"
+
+[[blocks.segments]]
+type = "executiontime"
+style = "plain"
+foreground = "gray"
+background = "transparent"
+template = "{{ .FormattedMs }}"
+
+[blocks.segments.properties]
+threshold = 5000
+
+[[blocks]]
+type = "prompt"
+alignment = "left"
+newline = true
+
+[[blocks.segments]]
+type = "text"
+style = "plain"
+background = "transparent"
+template = "{{ if true }}{{ end }}"
+
+[transient_prompt]
+background = "transparent"
+template = "{{ if true }}{{ end }}"
+newline = true
+
+[secondary_prompt]
+background = "transparent"
+template = "{{ if true }}{{ end }}"
