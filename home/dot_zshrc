@@ -1,77 +1,69 @@
 export PATH=$HOME/.local/bin/:$PATH
 export EDITOR='nvim'
 
-# EDIT CURRENT LINE IN EDITOR
+# Edit current line in editor
 autoload -U edit-command-line
 zle -N edit-command-line
 
 bindkey '^o' edit-command-line
 
-bindkey -v
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
-zle -N zle-keymap-select
-
-# initialize autocompletion
+# Initialize autocompletion
 autoload -U compinit
 compinit -u
 
-# history setup
+# History setup
 setopt APPEND_HISTORY
 setopt SHARE_HISTORY
 HISTFILE=$HOME/.zhistory
 SAVEHIST=10000
-HISTSIZE=999
+HISTSIZE=1000
 setopt HIST_EXPIRE_DUPS_FIRST
 setopt EXTENDED_HISTORY
-
-# autocompletion using arrow keys (based on history)
-bindkey '\e[A' history-search-backward
-bindkey '\e[B' history-search-forward
 
 eval "$(fnm env --use-on-cd --shell zsh)"
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/config.toml)"
 
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $(brew --prefix)/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 # OMP Vi Mode integration
+bindkey -v
 export POSH_VI_MODE="I"
 
 _omp_redraw-prompt() {
   local precmd
-  for precmd in $precmd_functions; do
-    $precmd
+  for precmd in "${precmd_functions[@]}"; do
+    "$precmd"
   done
-
-  zle .reset-prompt
+  zle && zle reset-prompt
 }
 
-function _omp_zle-keymap-select() {
-    if [ "${KEYMAP}" = 'vicmd' ]; then
-        export POSH_VI_MODE="N"
-    else
-        export POSH_VI_MODE="I"
-    fi
-
-    _omp_redraw-prompt
+function zvm_after_select_vi_mode() {
+  case $ZVM_MODE in
+  $ZVM_MODE_NORMAL)
+    POSH_VI_MODE="N"
+    ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+    ;;
+  $ZVM_MODE_INSERT)
+    POSH_VI_MODE="I"
+    ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BEAM
+    ;;
+  $ZVM_MODE_VISUAL)
+    POSH_VI_MODE="V"
+    ;;
+  $ZVM_MODE_VISUAL_LINE)
+    POSH_VI_MODE="V-L"
+    ;;
+  $ZVM_MODE_REPLACE)
+    POSH_VI_MODE="R"
+    ;;
+  esac
+  _omp_redraw-prompt
 }
-_omp_create_widget zle-keymap-select _omp_zle-keymap-select
-
-# reset to default mode at the end of line input reading
-function _omp_zle-line-finish() {
-    export POSH_VI_MODE="I"
-}
-_omp_create_widget zle-line-finish _omp_zle-line-finish
 
 # Fix a bug when you C-c in CMD mode, you'd be prompted with CMD mode indicator
 # while in fact you would be in INS mode.
@@ -81,4 +73,10 @@ TRAPINT() {
     export POSH_VI_MODE="I"
     return $(( 128 + $1 ))
 }
+
+ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+
+# Autocompletion using arrow keys (based on history)
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
 

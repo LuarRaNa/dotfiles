@@ -17,6 +17,10 @@ packages:
     - 'ripgrep'
     - 'starship'
     - 'yazi'
+    - 'zsh-autosuggestions'
+    - 'zsh-history-substring-search'
+    - 'zsh-syntax-highlighting'
+    - 'zsh-vi-mode'
     casks:
     - 'tableplus'
     - 'zed'
