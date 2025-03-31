@@ -3,20 +3,20 @@ theme = dark:BlulocoDark,light:BlulocoLight
 font-family = ""
 font-family = Iosevka Custom
 
-font-style = Regular
-font-style-bold = Bold
-font-style-italic = Oblique
-font-style-bold-italic = Bold Oblique
+font-style = Medium
+font-style-bold = Extrabold
+font-style-italic = Medium Oblique
+font-style-bold-italic = Extrabold Oblique
 
 font-synthetic-style = "no-bold, no-bold-italic, no-italic"
-font-size = 14
+font-size = 13
 font-thicken = false
 font-thicken-strength = 0
 
 window-padding-x = 0
 window-padding-y = 0
-window-height = 70
-window-width = 216
+window-height = 50
+window-width = 230
 window-colorspace = display-p3
 
 shell-integration-features = cursor, sudo, title

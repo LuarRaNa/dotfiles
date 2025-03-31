@@ -18,7 +18,7 @@ template = "{{ .Path }}"
 style = "full"
 
 [[blocks.segments]]
-template = " {{ if .Env.POSH_VI_MODE }}{{ .Env.POSH_VI_MODE }}\n{{ end }}"
+template = " {{ if .Env.POSH_VI_MODE }}[{{ .Env.POSH_VI_MODE }}]\n{{ end }}"
 foreground = "gray"
 background = "transparent"
 type = "text"
