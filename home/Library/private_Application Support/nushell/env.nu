@@ -1,9 +1,9 @@
 # Nushell Environment Config File
-$env.STARSHIP_SHELL = "nu"
-
 def create_left_prompt [] {
-    starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
+    oh-my-posh prompt print primary --config ([$env.HOME, '/.config/ohmyposh/config.toml'] | str join) 
 }
+
+$env.PROMPT_COMMAND = { || }
 
 $env.TRANSIENT_PROMPT_COMMAND = ""
 $env.TRANSIENT_PROMPT_INDICATOR_VI_INSERT = {|| [(ansi defb) "I:" (ansi reset) (char space)] | str join}
@@ -15,6 +15,7 @@ $env.PROMPT_INDICATOR = {|| "" }
 $env.PROMPT_INDICATOR_VI_INSERT = {|| [(ansi defb) "I:" (ansi reset) (char space)] | str join}
 $env.PROMPT_INDICATOR_VI_NORMAL = {|| [(ansi defb) "N:" (ansi reset) (char space)] | str join}
 $env.PROMPT_MULTILINE_INDICATOR = {|| [(ansi defb) "-:" (ansi reset) (char space)] | str join}
+$env.POSH_VI_MODE = "?"
 
 $env.ENV_CONVERSIONS = {
     "PATH": {
