@@ -1,23 +1,50 @@
 {
+  // General Editor Behavior
   "auto_update": false,
   "restore_on_startup": "none",
   "format_on_save": "off",
-  "vim_mode": true,
   "preferred_line_length": 100,
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "selection",
-  "ui_font_size": 13,
+
+  // Font & Layout
+  "ui_font_size": 14,
   "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 13,
+  "buffer_font_size": 14,
   "buffer_font_family": "Iosevka Custom",
   "buffer_line_height": {
     "custom": 1.5
   },
+
+  // Layout & Panels
   "centered_layout": {
     "left_padding": 0.22,
     "right_padding": 0.22
   },
   "bottom_dock_layout": "full",
+  "project_panel": {
+    "default_width": 500,
+    "dock": "left",
+    "indent_size": 10,
+    "auto_reveal_entries": true
+  },
+  "outline_panel": {
+    "default_width": 500,
+    "dock": "left",
+    "indent_size": 10
+  },
+  "git_panel": {
+    "default_width": 500,
+    "dock": "left"
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "tab_bar": {
+    "show": false
+  },
+
+  // Editor UI
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -31,6 +58,8 @@
   "scrollbar": {
     "show": "always"
   },
+
+  // Terminal
   "terminal": {
     "dock": "bottom",
     "default_height": 900,
@@ -38,40 +67,32 @@
       "custom": 1.5
     }
   },
-  "project_panel": {
-    "default_width": 300,
-    "dock": "left",
-    "indent_size": 10,
-    "auto_reveal_entries": true
-  },
-  "assistant": {
+
+  // Agent/AI
+  "agent": {
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-3-5-sonnet"
+      "model": "gpt-4.1"
     },
     "version": "2",
-    "default_width": 510,
-    "dock": "right"
+    "default_width": 500,
+    "dock": "left"
   },
-  "outline_panel": {
-    "default_width": 300,
-    "dock": "left",
-    "indent_size": 10
+
+  // Features
+  "features": {
+    "edit_prediction_provider": "copilot"
   },
-  "git_panel": {
-    "default_width": 300
-  },
-  "tabs": {
-    "git_status": true
-  },
-  "tab_bar": {
-    "show": false
-  },
+
+  // Vim Mode
+  "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
     "use_multiline_find": true,
     "use_smartcase_find": false
   },
+
+  // Inlay Hints
   "inlay_hints": {
     "enabled": false,
     "show_type_hints": true,
@@ -80,10 +101,14 @@
     "edit_debounce_ms": 700,
     "scroll_debounce_ms": 50
   },
+
+  // File Finder
   "file_finder": {
     "file_icons": true,
     "modal_max_width": "large"
   },
+
+  // Language-specific Settings
   "languages": {
     "Elixir": {
       "format_on_save": {
