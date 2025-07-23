@@ -15,8 +15,8 @@ font-thicken-strength = 0
 
 window-padding-x = 0
 window-padding-y = 0
-window-height = 50
-window-width = 216
+window-height = 42
+window-width = 214
 window-colorspace = display-p3
 
 shell-integration-features = cursor, sudo, title
