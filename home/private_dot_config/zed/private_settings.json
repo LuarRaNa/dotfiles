@@ -13,7 +13,7 @@
   "buffer_font_size": 14,
   "buffer_font_family": "Iosevka Custom",
   "buffer_line_height": {
-    "custom": 1.5
+    "custom": 1.25
   },
 
   // Layout & Panels
@@ -64,7 +64,7 @@
     "dock": "bottom",
     "default_height": 900,
     "line_height": {
-      "custom": 1.5
+      "custom": 1.25
     }
   },
 
