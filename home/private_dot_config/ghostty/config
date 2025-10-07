@@ -15,8 +15,8 @@ font-thicken-strength = 0
 
 window-padding-x = 0
 window-padding-y = 0
-window-height = 52
-window-width = 186
+window-height = 55
+window-width = 189
 window-colorspace = display-p3
 window-save-state = always
 
