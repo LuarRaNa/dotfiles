@@ -3,50 +3,22 @@
   "auto_update": false,
   "restore_on_startup": "none",
   "format_on_save": "off",
+  "vim_mode": true,
+
+  // Font & Typography
+  "ui_font_size": 14.0,
+  "ui_font_family": "Iosevka Custom",
+  "buffer_font_size": 12.0,
+  "buffer_font_family": "Iosevka Custom",
+  "buffer_font_weight": 400.0,
+  "buffer_line_height": {
+    "custom": 1.5
+  },
+
+  // Editor Display (Visuals)
   "preferred_line_length": 100,
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "selection",
-
-  // Font & Layout
-  "ui_font_size": 15.0,
-  "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 13.0,
-  "buffer_font_family": "Iosevka Custom",
-  "buffer_line_height": {
-    "custom": 1.25
-  },
-  "agent_buffer_font_size": 13.0,
-  "agent_ui_font_size": 15.0,
-
-  // Layout & Panels
-  "centered_layout": {
-    "left_padding": 0.22,
-    "right_padding": 0.22
-  },
-  "bottom_dock_layout": "full",
-  "project_panel": {
-    "default_width": 600,
-    "dock": "left",
-    "indent_size": 10,
-    "auto_reveal_entries": true
-  },
-  "outline_panel": {
-    "default_width": 600,
-    "dock": "left",
-    "indent_size": 10
-  },
-  "git_panel": {
-    "default_width": 600,
-    "dock": "left"
-  },
-  "tabs": {
-    "git_status": true
-  },
-  "tab_bar": {
-    "show": false
-  },
-
-  // Editor UI
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -60,13 +32,53 @@
   "scrollbar": {
     "show": "always"
   },
+  "sticky_scroll": {
+    "enabled": true
+  },
+  "inlay_hints": {
+    "enabled": false,
+    "show_type_hints": true,
+    "show_parameter_hints": true,
+    "show_other_hints": true,
+    "edit_debounce_ms": 700,
+    "scroll_debounce_ms": 50
+  },
+
+  // Layout & Panels
+  "centered_layout": {
+    "left_padding": 0.22,
+    "right_padding": 0.22
+  },
+  "bottom_dock_layout": "full",
+  "tab_bar": {
+    "show": false
+  },
+  "tabs": {
+    "git_status": true
+  },
+  "project_panel": {
+    "default_width": 600,
+    "dock": "left",
+    "indent_size": 10,
+    "auto_reveal_entries": true,
+    "sort_mode": "mixed"
+  },
+  "outline_panel": {
+    "default_width": 600,
+    "dock": "left",
+    "indent_size": 10
+  },
+  "git_panel": {
+    "default_width": 600,
+    "dock": "left"
+  },
 
   // Terminal
   "terminal": {
     "dock": "bottom",
     "default_height": 900,
     "line_height": {
-      "custom": 1.25
+      "custom": 1.5
     }
   },
 
@@ -79,27 +91,16 @@
     "default_width": 600,
     "dock": "left"
   },
-
-  // Features
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 14.0,
   "features": {
     "edit_prediction_provider": "copilot"
   },
 
-  // Vim Mode
-  "vim_mode": true,
+  // Vim Specifics
   "vim": {
     "use_system_clipboard": "always",
     "use_smartcase_find": false
-  },
-
-  // Inlay Hints
-  "inlay_hints": {
-    "enabled": false,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true,
-    "edit_debounce_ms": 700,
-    "scroll_debounce_ms": 50
   },
 
   // File Finder
