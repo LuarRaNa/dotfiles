@@ -8,8 +8,8 @@ font-style-bold = Bold
 font-style-italic = Oblique
 font-style-bold-italic = Bold Oblique
 
-font-synthetic-style = "no-bold, no-bold-italic, no-italic"
-font-size = 14.0
+font-synthetic-style = no-bold,no-bold-italic,no-italic
+font-size = 12.0
 font-thicken = false
 font-thicken-strength = 0
 
@@ -17,12 +17,12 @@ adjust-cell-height = 50%
 
 window-padding-x = 0
 window-padding-y = 0
-window-height = 43
-window-width = 216
+window-height = 50
+window-width = 252
 window-colorspace = display-p3
 window-save-state = never
 
-shell-integration-features = cursor, sudo, title
+shell-integration-features = cursor,sudo,title
 
 macos-titlebar-style = tabs
 macos-option-as-alt = false
