@@ -24,6 +24,7 @@
   "preferred_line_length": 100,
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "selection",
+  "colorize_brackets": true,
   "indent_guides": {
     "enabled": true,
     "line_width": 1,
@@ -62,26 +63,27 @@
     "git_status": true
   },
   "project_panel": {
-    "default_width": 500,
+    "default_width": 450,
     "dock": "left",
     "indent_size": 10,
     "auto_reveal_entries": true,
     "sort_mode": "mixed"
   },
   "outline_panel": {
-    "default_width": 500,
+    "default_width": 450,
     "dock": "left",
     "indent_size": 10
   },
   "git_panel": {
-    "default_width": 500,
+    "default_width": 450,
     "dock": "left"
   },
 
   // Terminal
   "terminal": {
-    "dock": "bottom",
-    "default_height": 320,
+    "dock": "right",
+    "default_height": 450,
+    "default_width": 450,
     "line_height": {
       "custom": 1.5
     }
@@ -93,8 +95,12 @@
       "provider": "copilot_chat",
       "model": "gpt-5-mini"
     },
-    "default_width": 500,
-    "default_height": 320,
+    "commit_message_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "default_width": 450,
+    "default_height": 450,
     "dock": "bottom"
   },
   "agent_buffer_font_size": 12.0,
