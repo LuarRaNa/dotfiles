@@ -1,7 +1,16 @@
 {
   // General Editor Behavior
+  "edit_predictions": {
+    "provider": "copilot"
+  },
+  "title_bar": {
+    "show_branch_icon": true,
+  },
+  "which_key": {
+    "enabled": true,
+  },
   "auto_update": false,
-  "restore_on_startup": "none",
+  "restore_on_startup": "launchpad",
   "format_on_save": "off",
   "vim_mode": true,
 
@@ -33,7 +42,8 @@
     "background_coloring": "disabled"
   },
   "gutter": {
-    "line_numbers": false
+    "line_numbers": true,
+    "min_line_number_digits": 6
   },
   "scrollbar": {
     "show": "always"
@@ -52,10 +62,10 @@
 
   // Layout & Panels
   "centered_layout": {
-    "left_padding": 0.22,
-    "right_padding": 0.22
+    "left_padding": 0.245,
+    "right_padding": 0.245
   },
-  "bottom_dock_layout": "full",
+  "bottom_dock_layout": "right_aligned",
   "tab_bar": {
     "show": false
   },
@@ -75,13 +85,15 @@
     "indent_size": 10
   },
   "git_panel": {
+    "tree_view": true,
+    "sort_by_path": true,
     "default_width": 450,
     "dock": "left"
   },
 
   // Terminal
   "terminal": {
-    "dock": "right",
+    "dock": "bottom",
     "default_height": 450,
     "default_width": 450,
     "line_height": {
@@ -91,6 +103,17 @@
 
   // Agent/AI
   "agent": {
+    "show_turn_stats": true,
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.2-codex"
+      }
+    ],
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-5-mini"
@@ -101,13 +124,10 @@
     },
     "default_width": 450,
     "default_height": 450,
-    "dock": "bottom"
+    "dock": "left"
   },
   "agent_buffer_font_size": 12.0,
   "agent_ui_font_size": 14.0,
-  "features": {
-    "edit_prediction_provider": "copilot"
-  },
 
   // Vim Specifics
   "vim": {
