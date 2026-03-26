@@ -1,20 +1,75 @@
 {
-  // General Editor Behavior
+  // Core App Behavior
+  "auto_update": false,
+  "auto_install_extensions": {
+    "dracula": true
+  },
+  "restore_on_startup": "launchpad",
+
+  // AI / Agent
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
   "edit_predictions": {
     "provider": "copilot"
   },
+  "agent": {
+    "show_turn_stats": true,
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.4"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.2-codex"
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5.3-codex"
+      }
+    ],
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "commit_message_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini"
+    },
+    "default_width": 450,
+    "default_height": 450,
+    "dock": "right"
+  },
+  "agent_buffer_font_size": 12.0,
+  "agent_ui_font_size": 14.0,
+
+  // UI / Theme
+  "theme": {
+    "mode": "system",
+    "light": "Dracula Light (Alucard)",
+    "dark": "Dracula"
+  },
   "title_bar": {
-    "show_branch_icon": true,
+    "show_branch_icon": true
+  },
+  "tab_bar": {
+    "show": false
+  },
+  "tabs": {
+    "git_status": true
   },
   "which_key": {
-    "enabled": true,
+    "enabled": true
   },
-  "auto_update": false,
-  "restore_on_startup": "launchpad",
-  "format_on_save": "off",
-  "vim_mode": true,
 
-  // Font & Typography
+  // Typography
   "ui_font_size": 14.0,
   "ui_font_family": "Iosevka Custom",
   "buffer_font_size": 12.0,
@@ -24,12 +79,10 @@
     "custom": 1.5
   },
 
-  // Editor Display (Visuals)
-  "theme": {
-    "mode": "system",
-    "light": "Dracula Light (Alucard)",
-    "dark": "Dracula"
-  },
+  // Editor Behavior
+  "vim_mode": true,
+  "format_on_save": "off",
+  "document_symbols": "off",
   "preferred_line_length": 100,
   "wrap_guides": [80, 100, 120],
   "show_whitespaces": "selection",
@@ -66,12 +119,6 @@
     "right_padding": 0.245
   },
   "bottom_dock_layout": "right_aligned",
-  "tab_bar": {
-    "show": false
-  },
-  "tabs": {
-    "git_status": true
-  },
   "project_panel": {
     "default_width": 450,
     "dock": "left",
@@ -101,44 +148,16 @@
     }
   },
 
-  // Agent/AI
-  "agent": {
-    "show_turn_stats": true,
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5-mini"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.2-codex"
-      }
-    ],
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    },
-    "commit_message_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    },
-    "default_width": 450,
-    "default_height": 450,
-    "dock": "left"
-  },
-  "agent_buffer_font_size": 12.0,
-  "agent_ui_font_size": 14.0,
-
-  // Vim Specifics
-  "vim": {
-    "use_system_clipboard": "always",
-    "use_smartcase_find": false
-  },
-
-  // File Finder
+  // Navigation
   "file_finder": {
     "file_icons": true,
     "modal_max_width": "large"
+  },
+
+  // Vim
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_smartcase_find": false
   },
 
   // Language-specific Settings
@@ -147,12 +166,7 @@
       "formatter": {
         "external": {
           "command": "mix",
-          "arguments": [
-            "format",
-            "--stdin-filename",
-            "{buffer_path}",
-            "-"
-          ]
+          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
         }
       },
       "format_on_save": "on"
