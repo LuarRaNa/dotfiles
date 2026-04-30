@@ -1,175 +1,63 @@
 {
-  // Core App Behavior
-  "auto_update": false,
-  "auto_install_extensions": {
-    "dracula": true
-  },
-  "restore_on_startup": "launchpad",
-
-  // AI / Agent
-  "agent_servers": {
-    "github-copilot-cli": {
-      "type": "registry"
-    }
-  },
-  "edit_predictions": {
-    "provider": "copilot"
-  },
-  "agent": {
-    "show_turn_stats": true,
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5-mini"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.4"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.2-codex"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5.3-codex"
-      }
-    ],
-    "default_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    },
-    "commit_message_model": {
-      "provider": "copilot_chat",
-      "model": "gpt-5-mini"
-    },
-    "default_width": 450,
-    "default_height": 450,
-    "dock": "right"
-  },
-  "agent_buffer_font_size": 12.0,
-  "agent_ui_font_size": 14.0,
-
-  // UI / Theme
   "theme": {
     "mode": "system",
-    "light": "Dracula Light (Alucard)",
-    "dark": "Dracula"
+    "light": "One Light",
+    "dark": "One Dark"
   },
-  "title_bar": {
-    "show_branch_icon": true
-  },
+
+  "restore_on_startup": "empty_tab",
+  "auto_update": false,
+  "vim_mode": true,
+  "format_on_save": "off",
+
   "tab_bar": {
     "show": false
   },
-  "tabs": {
-    "git_status": true
-  },
-  "which_key": {
-    "enabled": true
-  },
 
-  // Typography
-  "ui_font_size": 14.0,
-  "ui_font_family": "Iosevka Custom",
-  "buffer_font_size": 12.0,
-  "buffer_font_family": "Iosevka Custom",
-  "buffer_font_weight": 400.0,
-  "buffer_line_height": {
-    "custom": 1.5
-  },
-
-  // Editor Behavior
-  "vim_mode": true,
-  "format_on_save": "off",
-  "document_symbols": "off",
-  "preferred_line_length": 100,
-  "wrap_guides": [80, 100, 120],
-  "show_whitespaces": "selection",
-  "colorize_brackets": true,
-  "indent_guides": {
-    "enabled": true,
-    "line_width": 1,
-    "active_line_width": 3,
-    "coloring": "indent_aware",
-    "background_coloring": "disabled"
-  },
   "gutter": {
     "line_numbers": true,
     "min_line_number_digits": 6
   },
+
   "scrollbar": {
     "show": "always"
   },
+
   "sticky_scroll": {
     "enabled": true
   },
-  "inlay_hints": {
-    "enabled": false,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true,
-    "edit_debounce_ms": 700,
-    "scroll_debounce_ms": 50
-  },
 
-  // Layout & Panels
-  "centered_layout": {
-    "left_padding": 0.245,
-    "right_padding": 0.245
-  },
-  "bottom_dock_layout": "right_aligned",
-  "project_panel": {
-    "default_width": 450,
-    "dock": "left",
-    "indent_size": 10,
-    "auto_reveal_entries": true,
-    "sort_mode": "mixed"
-  },
-  "outline_panel": {
-    "default_width": 450,
-    "dock": "left",
-    "indent_size": 10
-  },
-  "git_panel": {
-    "tree_view": true,
-    "sort_by_path": true,
-    "default_width": 450,
-    "dock": "left"
-  },
-
-  // Terminal
-  "terminal": {
-    "dock": "bottom",
-    "default_height": 450,
-    "default_width": 450,
-    "line_height": {
-      "custom": 1.5
-    }
-  },
-
-  // Navigation
   "file_finder": {
     "file_icons": true,
     "modal_max_width": "large"
   },
 
-  // Vim
-  "vim": {
-    "use_system_clipboard": "always",
-    "use_smartcase_find": false
+  "buffer_line_height": "comfortable",
+  "terminal": {
+    "line_height": "comfortable"
+  },
+  "preferred_line_length": 100,
+  "wrap_guides": [80, 100, 120],
+  "show_wrap_guides": true,
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "fixed",
+    "background_coloring": "indent_aware"
   },
 
-  // Language-specific Settings
-  "languages": {
-    "Elixir": {
-      "formatter": {
-        "external": {
-          "command": "mix",
-          "arguments": ["format", "--stdin-filename", "{buffer_path}", "-"]
-        }
-      },
-      "format_on_save": "on"
+  "vim": {
+    "use_system_clipboard": "always"
+  },
+
+  "agent": {
+    "show_turn_stats": true
+  },
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
     }
   }
 }
