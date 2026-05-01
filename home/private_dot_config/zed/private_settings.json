@@ -32,17 +32,23 @@
     "modal_max_width": "large"
   },
 
+  "ui_font_size": 15,
+  "ui_font_family": "C0D3U1",
+  "buffer_font_size": 13,
+  "buffer_font_family": "C0D3",
+  "agent_buffer_font_size": 13,
   "buffer_line_height": "comfortable",
+  "soft_wrap": "bounded",
+  "preferred_line_length": 80,
+  "wrap_guides": [80, 100, 120],
+  "show_wrap_guides": true,
   "terminal": {
     "line_height": "comfortable"
   },
-  "preferred_line_length": 100,
-  "wrap_guides": [80, 100, 120],
-  "show_wrap_guides": true,
+
   "indent_guides": {
     "enabled": true,
-    "coloring": "fixed",
-    "background_coloring": "indent_aware"
+    "coloring": "fixed"
   },
 
   "vim": {

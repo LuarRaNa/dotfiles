@@ -1,7 +1,7 @@
 theme = dark:Bluloco Dark,light:Bluloco Light
 
 font-family = ""
-font-family = Lilex
+font-family = C0D3
 
 font-style = Regular
 font-style-bold = Bold
@@ -9,9 +9,9 @@ font-style-italic = Oblique
 font-style-bold-italic = Bold Oblique
 
 font-synthetic-style = no-bold,no-bold-italic,no-italic
-font-size = 15.0
-font-thicken = false
-font-thicken-strength = 0
+font-size = 13
+#font-thicken = true
+#font-thicken-strength = 1
 
 window-padding-x = 0
 window-padding-y = 0
@@ -20,7 +20,7 @@ window-width = 120
 window-colorspace = display-p3
 window-save-state = never
 
-adjust-cell-height = 22%
+adjust-cell-height = 60%
 
 shell-integration-features = cursor,sudo,title
 
