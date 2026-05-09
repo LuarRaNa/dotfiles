@@ -35,4 +35,3 @@ $env.config = {
     vi_normal: block
   }
 }
-

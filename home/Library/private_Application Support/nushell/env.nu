@@ -1,6 +1,6 @@
 # Nushell Environment Config File
 def create_left_prompt [] {
-    oh-my-posh prompt print primary --config ([$env.HOME, '/.config/ohmyposh/config.toml'] | str join) 
+    oh-my-posh init nu --config ([$env.HOME, '/.config/ohmyposh/config.toml'] | str join)
 }
 
 $env.PROMPT_COMMAND = { || }
